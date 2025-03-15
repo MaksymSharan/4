@@ -8,10 +8,9 @@
         body {
             margin: 0;
             padding: 0;
+            overflow: hidden;
             font-family: Arial, sans-serif;
         }
-
-        /* Фон зображення */
         #background {
             position: fixed;
             top: 0;
@@ -22,10 +21,8 @@
             background-size: cover;
             background-position: center;
             z-index: -1;
-            filter: brightness(50%); /* Тьмяність для фону */
+            filter: brightness(50%);
         }
-
-        /* Логотип */
         #logo {
             position: absolute;
             top: 20px;
@@ -35,26 +32,19 @@
             color: #F1C40F;
             text-transform: uppercase;
             text-decoration: none;
-            z-index: 1; /* Текст поверх фону */
         }
-
         #logo:hover {
             opacity: 0.8;
         }
-
-        /* Текст "Юля" */
         #name {
             position: absolute;
-            top: 80%;
+            top: 80%; /* Зміщено на 10% вниз */
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 80px;
             font-family: 'Brush Script MT', cursive, sans-serif;
             color: #F1C40F;
-            z-index: 1; /* Текст поверх фону */
         }
-
-        /* Текст "EN" */
         #language {
             position: absolute;
             top: 20px;
@@ -63,120 +53,12 @@
             font-weight: bold;
             color: #F1C40F;
             text-transform: uppercase;
-            z-index: 1; /* Текст поверх фону */
-        }
-
-        /* Стиль для блоків, що з'являються при прокручуванні */
-        .year-block {
-            position: relative;
-            width: 100%;
-            height: 80vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.7); /* Темний фон */
-            color: white;
-            font-size: 40px;
-            opacity: 0;
-            transform: scale(0);
-            transition: opacity 1s, transform 1s;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .year-block.open {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Кулька, яка зменшується при анімації */
-        .year-block .circle {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 100px;
-            height: 100px;
-            background-color: #F1C40F;
-            border-radius: 50%;
-            transition: all 1s ease-in-out;
-        }
-
-        .year-block.open .circle {
-            background-color: red;
-            width: 0;
-            height: 0;
-        }
-
-        /* Зміна кольору блоку */
-        .year-block.open {
-            background: linear-gradient(135deg, red, yellow);
-        }
-
-        /* Контейнер для блоків, що з'являються під зображенням */
-        .container {
-            background-color: white; /* Білий фон для анімації */
-            padding: 20px;
-        }
-
-        /* Контейнер для зображення, щоб не перекривати з іншими елементами */
-        #image-section {
-            position: relative;
-            height: 100vh;
-            background-image: url('https://maksymsharan.github.io/4/timoshenko-1.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: brightness(50%); /* Тьмяність для фону */
-            z-index: -1; /* Залишає зображення на фоні */
         }
     </style>
 </head>
 <body>
-    <!-- Зображення, що займає весь екран -->
     <div id="background"></div>
-
-    <div id="image-section">
-        <!-- Логотип -->
-        <a id="logo" href="https://maksymsharan.github.io/1/">Preambula</a>
-        <!-- Текст "Юля" -->
-        <div id="name">Юля</div>
-        <!-- Текст "EN" -->
-        <div id="language">EN</div>
-    </div>
-
-    <!-- Контейнер для блоків, що з'являються під зображенням -->
-    <div class="container">
-        <!-- Блоки з роками, що з'являються при прокручуванні -->
-        <div class="year-block" id="year-1">
-            <div class="circle"></div>
-            <div>1990</div>
-        </div>
-        <div class="year-block" id="year-2">
-            <div class="circle"></div>
-            <div>1991</div>
-        </div>
-        <div class="year-block" id="year-3">
-            <div class="circle"></div>
-            <div>1992</div>
-        </div>
-        <!-- Додайте більше блоків за потребою -->
-    </div>
-
-    <script>
-        // Отримуємо всі блоки
-        const yearBlocks = document.querySelectorAll('.year-block');
-
-        // Слухаємо подію прокручування
-        window.addEventListener('scroll', () => {
-            // Для кожного блоку перевіряємо, чи він знаходиться в межах екрану
-            yearBlocks.forEach(block => {
-                const rect = block.getBoundingClientRect();
-                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-                    block.classList.add('open');
-                } else {
-                    block.classList.remove('open');
-                }
-            });
-        });
-    </script>
+    <a id="logo" href="https://maksymsharan.github.io/1/">Preambula</a>
+    <div id="name">Юля</div>
+    <div id="language">EN</div>
 </body>
-</html>
