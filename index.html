@@ -3,97 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Modern Website</title>
+  <title>Advanced Interactive Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* Визначення змінних для теми */
     :root {
-      --primary-color: #f8b400;
+      --primary-color: #ff6f00;
       --secondary-color: #333;
-      --accent-color: #007bff;
-      --background-color: #f1f1f1;
+      --background-color: #f5f5f5;
+      --accent-color: #0d47a1;
       --white: #fff;
+      --grey: #dcdcdc;
     }
 
-    /* Загальні стилі */
-    body {
-      font-family: 'Arial', sans-serif;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
       background-color: var(--background-color);
-      color: var(--secondary-color);
     }
 
-    h1, h2, h3 {
-      font-family: 'Helvetica', sans-serif;
-      margin: 10px 0;
-    }
-
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Header */
     header {
-      background-color: var(--secondary-color);
-      color: var(--white);
       padding: 20px;
+      background-color: var(--primary-color);
       text-align: center;
-      font-size: 2em;
+      font-size: 2.5em;
+      color: var(--white);
     }
 
-    /* Адаптивне меню */
     nav {
       display: flex;
-      justify-content: space-around;
-      background-color: var(--primary-color);
+      justify-content: center;
+      gap: 20px;
+      background-color: var(--accent-color);
       padding: 15px;
-      margin-bottom: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
       color: var(--white);
-      padding: 8px;
-      font-size: 1.2em;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 0.3s ease;
     }
 
     nav a:hover {
-      background-color: var(--secondary-color);
-      border-radius: 5px;
+      transform: scale(1.1);
     }
 
-    /* Основна частина */
     .main-content {
       display: grid;
       grid-template-columns: 1fr 3fr;
-      gap: 20px;
+      gap: 30px;
       padding: 20px;
-      margin-bottom: 30px;
     }
 
     .sidebar {
       background-color: var(--white);
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .article {
       background-color: var(--white);
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .article:hover {
+      transform: scale(1.02);
     }
 
     .article img {
       max-width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
-    /* Анімація для завантаження */
+    footer {
+      padding: 20px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+    }
+
+    /* Анімація при завантаженні */
     .fade-in {
       opacity: 0;
       animation: fadeIn 1s forwards;
@@ -105,31 +106,52 @@
       }
     }
 
-    /* Адаптивність для мобільних пристроїв */
+    /* Адаптивність */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
-        align-items: center;
+        gap: 10px;
       }
 
       .main-content {
         grid-template-columns: 1fr;
       }
+    }
 
-      header {
-        font-size: 1.5em;
-      }
+    /* Lazy Loading для зображень */
+    .lazy {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .lazy.loaded {
+      opacity: 1;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    Advanced Modern Website
+    <h1>Interactive Modern Website</h1>
   </header>
 
-  <!-- Navigation -->
   <nav>
     <a href="#">Home</a>
     <a href="#">About</a>
@@ -137,9 +159,7 @@
     <a href="#">Contact</a>
   </nav>
 
-  <!-- Main Content -->
   <div class="main-content">
-    <!-- Sidebar -->
     <div class="sidebar fade-in">
       <h3>Latest News</h3>
       <ul>
@@ -149,47 +169,41 @@
       </ul>
     </div>
 
-    <!-- Main Articles -->
     <div class="article fade-in">
       <h2>Article Title</h2>
-      <img src="https://via.placeholder.com/800x400" alt="Article Image">
+      <img class="lazy" data-src="https://via.placeholder.com/800x400" alt="Article Image">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, ipsum vitae placerat convallis, nulla nisi ultricies felis, eget lacinia nunc enim eget lorem.</p>
       <a href="#">Read more</a>
     </div>
   </div>
 
-  <!-- Lazy-loaded Image Section -->
-  <div class="lazy-image-section fade-in">
-    <h2>Lazy-loaded Images</h2>
-    <img class="lazy" data-src="https://via.placeholder.com/1200x600" alt="Lazy Image" width="100%" />
-  </div>
-
-  <!-- Footer -->
-  <footer style="text-align:center; padding:20px; background-color: var(--secondary-color); color: var(--white);">
-    <p>&copy; 2025 Advanced Modern Website. All Rights Reserved.</p>
+  <footer>
+    <p>&copy; 2025 Interactive Modern Website. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="#"><img src="https://via.placeholder.com/40x40" alt="Facebook"></a>
+      <a href="#"><img src="https://via.placeholder.com/40x40" alt="Instagram"></a>
+      <a href="#"><img src="https://via.placeholder.com/40x40" alt="LinkedIn"></a>
+    </div>
   </footer>
 
   <script>
-    // Відповідальність за завантаження зображень за допомогою lazy loading
-    const images = document.querySelectorAll('img.lazy');
-    const config = {
-      rootMargin: '0px 0px 200px 0px',
-      threshold: 0
-    };
+    // Lazy Load Images
+    document.addEventListener("DOMContentLoaded", () => {
+      const images = document.querySelectorAll('img.lazy');
+      images.forEach(img => {
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.classList.add('loaded');
+              observer.unobserve(img);
+            }
+          });
+        }, { threshold: 0.1 });
 
-    let imageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.remove('lazy');
-          imageObserver.unobserve(img);
-        }
+        observer.observe(img);
       });
-    }, config);
-
-    images.forEach(image => {
-      imageObserver.observe(image);
     });
   </script>
 </body>
