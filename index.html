@@ -21,6 +21,7 @@
             background-size: cover;
             background-position: center;
             z-index: -1;
+            filter: brightness(50%); /* затемнення фону */
         }
         #logo {
             position: absolute;
@@ -30,11 +31,15 @@
             font-weight: bold;
             color: #F1C40F; /* Темно-жовтий */
             text-transform: uppercase;
+            text-decoration: none;
+        }
+        #logo:hover {
+            opacity: 0.8; /* ефект при наведенні */
         }
     </style>
 </head>
 <body>
     <div id="background"></div>
-    <div id="logo">Preambula</div>
+    <a id="logo" href="https://maksymsharan.github.io/1/">Preambula</a>
 </body>
 </html>
