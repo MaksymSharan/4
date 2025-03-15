@@ -99,28 +99,49 @@
         .year-block.open {
             background: linear-gradient(135deg, red, yellow);
         }
+
+        /* Стиль для блоку, що містить зображення */
+        #image-section {
+            position: relative;
+            height: 100vh;
+            background-image: url('https://maksymsharan.github.io/4/timoshenko-1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Допоміжний стиль для верстки */
+        .container {
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
     <div id="background"></div>
-    <a id="logo" href="https://maksymsharan.github.io/1/">Preambula</a>
-    <div id="name">Юля</div>
-    <div id="language">EN</div>
 
-    <!-- Блоки, які з'являються після прокручування -->
-    <div class="year-block" id="year-1">
-        <div class="circle"></div>
-        <div>1990</div>
+    <!-- Зображення, що займає весь екран -->
+    <div id="image-section">
+        <a id="logo" href="https://maksymsharan.github.io/1/">Preambula</a>
+        <div id="name">Юля</div>
+        <div id="language">EN</div>
     </div>
-    <div class="year-block" id="year-2">
-        <div class="circle"></div>
-        <div>1991</div>
+
+    <!-- Контейнер для блоків -->
+    <div class="container">
+        <!-- Блоки з роками, що з'являються при прокручуванні -->
+        <div class="year-block" id="year-1">
+            <div class="circle"></div>
+            <div>1990</div>
+        </div>
+        <div class="year-block" id="year-2">
+            <div class="circle"></div>
+            <div>1991</div>
+        </div>
+        <div class="year-block" id="year-3">
+            <div class="circle"></div>
+            <div>1992</div>
+        </div>
+        <!-- Додайте більше блоків за потребою -->
     </div>
-    <div class="year-block" id="year-3">
-        <div class="circle"></div>
-        <div>1992</div>
-    </div>
-    <!-- Додайте більше блоків за потребою -->
 
     <script>
         // Отримуємо всі блоки
