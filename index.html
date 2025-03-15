@@ -10,6 +10,8 @@
             padding: 0;
             font-family: Arial, sans-serif;
         }
+
+        /* Фон зображення */
         #background {
             position: fixed;
             top: 0;
@@ -22,6 +24,8 @@
             z-index: -1;
             filter: brightness(50%); /* Тьмяність для фону */
         }
+
+        /* Логотип */
         #logo {
             position: absolute;
             top: 20px;
@@ -33,9 +37,12 @@
             text-decoration: none;
             z-index: 1; /* Текст поверх фону */
         }
+
         #logo:hover {
             opacity: 0.8;
         }
+
+        /* Текст "Юля" */
         #name {
             position: absolute;
             top: 80%;
@@ -46,6 +53,8 @@
             color: #F1C40F;
             z-index: 1; /* Текст поверх фону */
         }
+
+        /* Текст "EN" */
         #language {
             position: absolute;
             top: 20px;
@@ -121,12 +130,15 @@
     </style>
 </head>
 <body>
+    <!-- Зображення, що займає весь екран -->
     <div id="background"></div>
 
-    <!-- Зображення, що займає весь екран -->
     <div id="image-section">
+        <!-- Логотип -->
         <a id="logo" href="https://maksymsharan.github.io/1/">Preambula</a>
+        <!-- Текст "Юля" -->
         <div id="name">Юля</div>
+        <!-- Текст "EN" -->
         <div id="language">EN</div>
     </div>
 
