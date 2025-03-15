@@ -8,7 +8,6 @@
         body {
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
             font-family: Arial, sans-serif;
         }
         #background {
@@ -55,7 +54,7 @@
             text-transform: uppercase;
         }
 
-        /* Новий стиль для блоків */
+        /* Стиль для блоків, що з'являються при прокручуванні */
         .year-block {
             position: relative;
             width: 100%;
@@ -63,7 +62,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.7);  /* Темний фон */
+            background-color: rgba(0, 0, 0, 0.7); /* Темний фон */
             color: white;
             font-size: 40px;
             opacity: 0;
@@ -72,13 +71,13 @@
             border-radius: 10px;
             margin-bottom: 20px;
         }
-        /* Клас для відкриття блока */
+
         .year-block.open {
             opacity: 1;
             transform: scale(1);
         }
 
-        /* Кулька, яка змінюється під час анімації */
+        /* Кулька, яка зменшується при анімації */
         .year-block .circle {
             position: absolute;
             bottom: 20px;
@@ -90,21 +89,15 @@
             transition: all 1s ease-in-out;
         }
 
-        /* Кулька змінюється на червоно-жовтий */
         .year-block.open .circle {
             background-color: red;
             width: 0;
             height: 0;
         }
 
-        /* Зміна кольору при відкритті */
+        /* Зміна кольору блоку */
         .year-block.open {
             background: linear-gradient(135deg, red, yellow);
-        }
-
-        /* Анімація блоків */
-        .year-block:not(.open) {
-            transition: opacity 1s ease-out, transform 1s ease-out;
         }
     </style>
 </head>
@@ -114,7 +107,7 @@
     <div id="name">Юля</div>
     <div id="language">EN</div>
 
-    <!-- Блоки для років, що з'являються після прокручування -->
+    <!-- Блоки, які з'являються після прокручування -->
     <div class="year-block" id="year-1">
         <div class="circle"></div>
         <div>1990</div>
