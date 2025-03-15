@@ -26,11 +26,13 @@
       font-weight: bold;
     }
 
+    /* Адаптивне меню */
     nav {
       background-color: #444;
       padding: 10px;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -65,11 +67,50 @@
       font-size: 24px;
     }
 
+    /* Стиль для слайд-шоу */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 400px;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .slider-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .slider-button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
     /* Головна секція новин */
     .content {
       display: flex;
       justify-content: space-between;
       margin: 20px;
+      flex-wrap: wrap;
     }
 
     .main-content {
@@ -93,6 +134,10 @@
     .main-content h2 {
       font-size: 28px;
       margin-top: 10px;
+    }
+
+    .main-content p {
+      font-size: 16px;
     }
 
     .sidebar {
@@ -135,6 +180,24 @@
     footer a:hover {
       color: #007bff;
     }
+
+    /* Адаптивність */
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .main-content,
+      .sidebar {
+        width: 100%;
+      }
+
+      nav a {
+        padding: 10px 15px;
+        margin: 5px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -158,6 +221,19 @@
   <div class="main-banner">
     <h1>Welcome to Forbes-like Site</h1>
     <p>Breaking news, financial analysis, and expert opinions.</p>
+  </div>
+
+  <!-- Slider Section -->
+  <div class="slider">
+    <div class="slides">
+      <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400');"></div>
+      <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400');"></div>
+      <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400');"></div>
+    </div>
+    <div class="slider-buttons">
+      <button class="slider-button" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="slider-button" onclick="moveSlide(1)">&#10095;</button>
+    </div>
   </div>
 
   <!-- Main Content Section -->
@@ -203,6 +279,17 @@
     <a href="#">Privacy Policy</a>
     <a href="#">Terms of Service</a>
   </footer>
+
+  <script>
+    let slideIndex = 0;
+
+    function moveSlide(n) {
+      const slides = document.querySelector('.slides');
+      const totalSlides = document.querySelectorAll('.slide').length;
+      slideIndex = (slideIndex + n + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+  </script>
 
 </body>
 </html>
