@@ -1,147 +1,66 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Юля</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      font-family: Arial, sans-serif;
-    }
-
-    #background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('https://maksymsharan.github.io/4/timoshenko-1.jpg');
-      background-size: cover;
-      background-position: center;
-      z-index: -1;
-      filter: brightness(50%);
-    }
-
-    #logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 40px;
-      font-weight: bold;
-      color: #F1C40F;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    #logo:hover {
-      opacity: 0.8;
-    }
-
-    #name {
-      position: absolute;
-      top: 80%; /* Offset 10% down */
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 80px;
-      font-family: 'Brush Script MT', cursive, sans-serif;
-      color: #F1C40F;
-    }
-
-    #language {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 30px;
-      font-weight: bold;
-      color: #F1C40F;
-      text-transform: uppercase;
-    }
-
-    /* New Styles for Year Blocks */
-    .year-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .year-block {
-      position: absolute;
-      bottom: -100vh;
-      right: -100vh;
-      width: 200vh;
-      height: 200vh;
-      border-radius: 50%;
-      background: rgba(241, 196, 15, 0.9);
-      transform: scale(0);
-      transform-origin: bottom right;
-      transition: transform 1s ease-in-out;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 10vh;
-      color: #000;
-      font-weight: bold;
-    }
-
-    .year-block.active {
-      transform: scale(1);
-    }
-
-    /* Hide scrollbar */
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юля</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://maksymsharan.github.io/4/timoshenko-1.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: brightness(50%);
+        }
+        #logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #F1C40F;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        #logo:hover {
+            opacity: 0.8;
+        }
+        #name {
+            position: absolute;
+            top: 80%; /* Зміщено на 10% вниз */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            font-family: 'Brush Script MT', cursive, sans-serif;
+            color: #F1C40F;
+        }
+        #language {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #F1C40F;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
-  <div id="background"></div>
-  <a id="logo" href="https://maksymsharan.github.io/1/">Preamble</a>
-  <div id="name">Yulia</div>
-  <div id="language">EN</div>
-
-  <!-- Year Blocks -->
-  <div class="year-container">
-    <div class="year-block" data-year="2023">2023</div>
-  </div>
-  <div class="year-container">
-    <div class="year-block" data-year="2022">2022</div>
-  </div>
-  <div class="year-container">
-    <div class="year-block" data-year="2021">2021</div>
-  </div>
-  <div class="year-container">
-    <div class="year-block" data-year="2020">2020</div>
-  </div>
-
-  <script>
-    // JavaScript to handle the scroll animation
-    const yearBlocks = document.querySelectorAll('.year-block');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          } else {
-            entry.target.classList.remove('active');
-          }
-        });
-      },
-      {
-        threshold: 0.5, // Trigger when 50% of the block is visible
-      }
-    );
-
-    yearBlocks.forEach((block) => {
-      observer.observe(block);
-    });
-  </script>
+    <div id="background"></div>
+    <a id="logo" href="https://maksymsharan.github.io/1/">Preambula</a>
+    <div id="name">Юля</div>
+    <div id="language">EN</div>
 </body>
 </html>
