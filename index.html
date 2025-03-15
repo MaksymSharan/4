@@ -112,7 +112,13 @@
             background: linear-gradient(135deg, red, yellow);
         }
 
-        /* Стиль для блоку з зображенням */
+        /* Контейнер для блоків, що з'являються під зображенням */
+        .container {
+            background-color: white; /* Білий фон для анімації */
+            padding: 20px;
+        }
+
+        /* Контейнер для зображення, щоб не перекривати з іншими елементами */
         #image-section {
             position: relative;
             height: 100vh;
@@ -120,12 +126,7 @@
             background-size: cover;
             background-position: center;
             filter: brightness(50%); /* Тьмяність для фону */
-        }
-
-        /* Контейнер для блоків, що з'являються під зображенням */
-        .container {
-            background-color: white; /* Білий фон для анімації */
-            padding: 20px;
+            z-index: -1; /* Залишає зображення на фоні */
         }
     </style>
 </head>
