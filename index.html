@@ -8,7 +8,6 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
             font-family: Arial, sans-serif;
         }
         #background {
@@ -38,7 +37,7 @@
         }
         #name {
             position: absolute;
-            top: 80%; /* Зміщено на 10% вниз */
+            top: 80%;
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 80px;
@@ -54,6 +53,32 @@
             color: #F1C40F;
             text-transform: uppercase;
         }
+        #animation-container {
+            position: relative;
+            margin-top: 100vh; /* Починається після фото */
+            height: 150vh;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #circle {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, yellow, red);
+            border-radius: 50%;
+            transition: transform 1s ease-out, border-radius 1s ease-out;
+        }
+        .half-moon {
+            border-radius: 50% 0 0 50%;
+            transform: scale(1.5);
+        }
+        .full-expansion {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            background: linear-gradient(to right, yellow, red);
+        }
     </style>
 </head>
 <body>
@@ -61,5 +86,26 @@
     <a id="logo" href="https://maksymsharan.github.io/1/">Preambula</a>
     <div id="name">Юля</div>
     <div id="language">EN</div>
+
+    <div id="animation-container">
+        <div id="circle"></div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const circle = document.getElementById('circle');
+            const scrollPosition = window.scrollY;
+            const triggerPoint = window.innerHeight;
+
+            if (scrollPosition > triggerPoint * 0.8 && scrollPosition < triggerPoint * 1.5) {
+                circle.classList.add('half-moon');
+                circle.classList.remove('full-expansion');
+            } else if (scrollPosition >= triggerPoint * 1.5) {
+                circle.classList.add('full-expansion');
+            } else {
+                circle.classList.remove('half-moon', 'full-expansion');
+            }
+        });
+    </script>
 </body>
 </html>
