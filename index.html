@@ -59,7 +59,7 @@
         .year-block {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: 80vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -70,12 +70,14 @@
             transform: scale(0);
             transition: opacity 1s, transform 1s;
             border-radius: 10px;
+            margin-bottom: 20px;
         }
         /* Клас для відкриття блока */
         .year-block.open {
             opacity: 1;
             transform: scale(1);
         }
+
         /* Кулька, яка змінюється під час анімації */
         .year-block .circle {
             position: absolute;
@@ -87,6 +89,7 @@
             border-radius: 50%;
             transition: all 1s ease-in-out;
         }
+
         /* Кулька змінюється на червоно-жовтий */
         .year-block.open .circle {
             background-color: red;
@@ -97,6 +100,11 @@
         /* Зміна кольору при відкритті */
         .year-block.open {
             background: linear-gradient(135deg, red, yellow);
+        }
+
+        /* Анімація блоків */
+        .year-block:not(.open) {
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
     </style>
 </head>
