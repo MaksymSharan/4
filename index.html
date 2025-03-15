@@ -3,199 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forbes-like Site</title>
+  <title>Advanced Modern Website</title>
   <style>
+    /* Визначення змінних для теми */
+    :root {
+      --primary-color: #f8b400;
+      --secondary-color: #333;
+      --accent-color: #007bff;
+      --background-color: #f1f1f1;
+      --white: #fff;
+    }
+
     /* Загальні стилі */
     body {
+      font-family: 'Arial', sans-serif;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
+      background-color: var(--background-color);
+      color: var(--secondary-color);
     }
 
+    h1, h2, h3 {
+      font-family: 'Helvetica', sans-serif;
+      margin: 10px 0;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
     header {
-      background-color: #333;
-      color: white;
+      background-color: var(--secondary-color);
+      color: var(--white);
       padding: 20px;
       text-align: center;
-    }
-
-    header a {
-      color: white;
-      text-decoration: none;
-      font-size: 36px;
-      font-weight: bold;
+      font-size: 2em;
     }
 
     /* Адаптивне меню */
     nav {
-      background-color: #444;
-      padding: 10px;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      justify-content: space-around;
+      background-color: var(--primary-color);
+      padding: 15px;
+      margin-bottom: 20px;
     }
 
     nav a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 20px;
-      margin: 0 15px;
-      font-size: 18px;
+      color: var(--white);
+      padding: 8px;
+      font-size: 1.2em;
     }
 
     nav a:hover {
-      background-color: #666;
+      background-color: var(--secondary-color);
+      border-radius: 5px;
     }
 
-    .main-banner {
-      width: 100%;
-      height: 400px;
-      background-image: url('https://via.placeholder.com/1200x400');
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      color: white;
-      padding: 100px 0;
-    }
-
-    .main-banner h1 {
-      font-size: 48px;
-      font-weight: bold;
-    }
-
-    .main-banner p {
-      font-size: 24px;
-    }
-
-    /* Стиль для слайд-шоу */
-    .slider {
-      position: relative;
-      max-width: 100%;
-      height: 400px;
-      overflow: hidden;
-    }
-
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .slide {
-      min-width: 100%;
-      height: 400px;
-      background-position: center;
-      background-size: cover;
-    }
-
-    .slider-buttons {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-    }
-
-    .slider-button {
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      font-size: 30px;
-      padding: 10px;
-      cursor: pointer;
-    }
-
-    /* Головна секція новин */
-    .content {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px;
-      flex-wrap: wrap;
-    }
-
+    /* Основна частина */
     .main-content {
-      width: 70%;
-    }
-
-    .main-content article {
-      margin-bottom: 20px;
-      background-color: white;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 20px;
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
-
-    .main-content img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .main-content h2 {
-      font-size: 28px;
-      margin-top: 10px;
-    }
-
-    .main-content p {
-      font-size: 16px;
+      margin-bottom: 30px;
     }
 
     .sidebar {
-      width: 25%;
+      background-color: var(--white);
       padding: 20px;
-      background-color: #f1f1f1;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .article {
+      background-color: var(--white);
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .article img {
+      max-width: 100%;
       border-radius: 8px;
     }
 
-    .sidebar h3 {
-      font-size: 24px;
-      margin-bottom: 20px;
+    /* Анімація для завантаження */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
     }
 
-    .sidebar a {
-      display: block;
-      color: #333;
-      text-decoration: none;
-      margin-bottom: 10px;
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
 
-    .sidebar a:hover {
-      color: #007bff;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    footer a:hover {
-      color: #007bff;
-    }
-
-    /* Адаптивність */
+    /* Адаптивність для мобільних пристроїв */
     @media (max-width: 768px) {
-      .content {
+      nav {
         flex-direction: column;
         align-items: center;
       }
 
-      .main-content,
-      .sidebar {
-        width: 100%;
+      .main-content {
+        grid-template-columns: 1fr;
       }
 
-      nav a {
-        padding: 10px 15px;
-        margin: 5px;
+      header {
+        font-size: 1.5em;
       }
     }
   </style>
@@ -204,92 +126,71 @@
 
   <!-- Header -->
   <header>
-    <a href="#">Forbes-like Site</a>
+    Advanced Modern Website
   </header>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <nav>
     <a href="#">Home</a>
-    <a href="#">News</a>
-    <a href="#">Business</a>
-    <a href="#">Technology</a>
-    <a href="#">Finance</a>
-    <a href="#">Lifestyle</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
   </nav>
 
-  <!-- Main Banner -->
-  <div class="main-banner">
-    <h1>Welcome to Forbes-like Site</h1>
-    <p>Breaking news, financial analysis, and expert opinions.</p>
-  </div>
-
-  <!-- Slider Section -->
-  <div class="slider">
-    <div class="slides">
-      <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400');"></div>
-      <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400');"></div>
-      <div class="slide" style="background-image: url('https://via.placeholder.com/1200x400');"></div>
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Sidebar -->
+    <div class="sidebar fade-in">
+      <h3>Latest News</h3>
+      <ul>
+        <li><a href="#">Article 1</a></li>
+        <li><a href="#">Article 2</a></li>
+        <li><a href="#">Article 3</a></li>
+      </ul>
     </div>
-    <div class="slider-buttons">
-      <button class="slider-button" onclick="moveSlide(-1)">&#10094;</button>
-      <button class="slider-button" onclick="moveSlide(1)">&#10095;</button>
-    </div>
-  </div>
 
-  <!-- Main Content Section -->
-  <div class="content">
     <!-- Main Articles -->
-    <div class="main-content">
-      <article>
-        <img src="https://via.placeholder.com/1200x600" alt="Article Image">
-        <h2>Article Title 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque...</p>
-        <a href="#">Read more...</a>
-      </article>
-
-      <article>
-        <img src="https://via.placeholder.com/1200x600" alt="Article Image">
-        <h2>Article Title 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque...</p>
-        <a href="#">Read more...</a>
-      </article>
-
-      <article>
-        <img src="https://via.placeholder.com/1200x600" alt="Article Image">
-        <h2>Article Title 3</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus scelerisque...</p>
-        <a href="#">Read more...</a>
-      </article>
+    <div class="article fade-in">
+      <h2>Article Title</h2>
+      <img src="https://via.placeholder.com/800x400" alt="Article Image">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, ipsum vitae placerat convallis, nulla nisi ultricies felis, eget lacinia nunc enim eget lorem.</p>
+      <a href="#">Read more</a>
     </div>
+  </div>
 
-    <!-- Sidebar with Categories -->
-    <div class="sidebar">
-      <h3>Categories</h3>
-      <a href="#">Business</a>
-      <a href="#">Technology</a>
-      <a href="#">Finance</a>
-      <a href="#">Lifestyle</a>
-      <a href="#">Health</a>
-    </div>
+  <!-- Lazy-loaded Image Section -->
+  <div class="lazy-image-section fade-in">
+    <h2>Lazy-loaded Images</h2>
+    <img class="lazy" data-src="https://via.placeholder.com/1200x600" alt="Lazy Image" width="100%" />
   </div>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Forbes-like Site. All Rights Reserved.</p>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms of Service</a>
+  <footer style="text-align:center; padding:20px; background-color: var(--secondary-color); color: var(--white);">
+    <p>&copy; 2025 Advanced Modern Website. All Rights Reserved.</p>
   </footer>
 
   <script>
-    let slideIndex = 0;
+    // Відповідальність за завантаження зображень за допомогою lazy loading
+    const images = document.querySelectorAll('img.lazy');
+    const config = {
+      rootMargin: '0px 0px 200px 0px',
+      threshold: 0
+    };
 
-    function moveSlide(n) {
-      const slides = document.querySelector('.slides');
-      const totalSlides = document.querySelectorAll('.slide').length;
-      slideIndex = (slideIndex + n + totalSlides) % totalSlides;
-      slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-    }
+    let imageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove('lazy');
+          imageObserver.unobserve(img);
+        }
+      });
+    }, config);
+
+    images.forEach(image => {
+      imageObserver.observe(image);
+    });
   </script>
-
 </body>
 </html>
