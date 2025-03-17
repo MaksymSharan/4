@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -64,18 +63,6 @@
             border-radius: 50%;
             transition: all 0.5s ease-out;
         }
-        #text-block {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-            position: relative;
-            top: 150vh;
-            width: 60%;
-            margin: 0 auto;
-            font-size: 20px;
-            line-height: 1.6;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -86,24 +73,16 @@
 
     <div id="animation-container"></div>
 
-    <div id="text-block">27 листопада 1960 року. Дніпропетровськ. На світ з'являється дівчинка в родині, яку сама пізніше назве "український латиш і українка" — звучить як екзотичний коктейль, але без парасольки. Мати — диспетчерка таксомоторного парку, жінка, яка керувала машинами, але життя вперто відмовлялося підкорятися її наказам. Батько — зник із горизонту, коли Юлі було три. Він не просто пішов — він зробив це класично, як персонаж дешевої драми: залишивши після себе тільки прізвище та купу питань, на які ніхто не чекає відповіді. Вихованням займалась лише мати — сильна жінка, яка тягнула на собі і дитину, і життя, і, здається, ще й увесь парк тих клятих таксі.</div>
-
     <script>
         window.addEventListener('scroll', () => {
             const scrollPos = window.scrollY;
             const animationContainer = document.getElementById('animation-container');
-            const textBlock = document.getElementById('text-block');
 
             let scale = Math.min(1 + scrollPos / 500, 8);
             let borderRadius = Math.max(50 - scrollPos / 10, 0);
 
             animationContainer.style.transform = `scale(${scale})`;
             animationContainer.style.borderRadius = `${borderRadius}% 50% 50% ${borderRadius}%`;
-
-            if (scrollPos > window.innerHeight / 2) {
-                textBlock.style.opacity = 1;
-                textBlock.style.transform = 'translateY(0)';
-            }
         });
     </script>
 </body>
