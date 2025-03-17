@@ -1,0 +1,8 @@
+// Простий скрипт для обробки кліків на "Читати більше"
+document.querySelectorAll('.read-more').forEach(link => {
+  link.addEventListener('click', (e) => {
+    alert('Відкривається детальніша інформація...');
+    // Можна додати реальне перенаправлення на нову сторінку, наприклад:
+    // window.location.href = link.href;
+  });
+});
