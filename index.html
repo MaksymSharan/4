@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мій сайт</title>
+    
+    <!-- CSS -->
     <style>
-        /* CSS */
+        /* Загальні стилі для всього сайту */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -54,6 +56,7 @@
             bottom: 0;
         }
 
+        /* Стилі для кнопки */
         .button {
             padding: 10px 20px;
             background-color: #28a745;
@@ -66,13 +69,19 @@
             background-color: #218838;
         }
     </style>
+
+    <!-- Пре-Завантаження шрифтів (як у вашому прикладі) -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92FfA5T6xI.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Інші ресурси -->
+    <link rel="preload" as="image" href="https://www.example.com/images/home/home-hero-text-shadow.png" fetchpriority="high">
 </head>
 <body>
 
     <!-- Header -->
     <header>
         <h1>Мій сайт</h1>
-        <p>Простий сайт, створений за допомогою HTML, CSS та JavaScript</p>
+        <p>Це простий приклад веб-сайту з інтеграцією шрифтів та графіки.</p>
     </header>
 
     <!-- Navigation -->
@@ -86,7 +95,7 @@
     <!-- Main content -->
     <main>
         <h2>Ласкаво просимо на наш сайт</h2>
-        <p>Це простий приклад, який використовує HTML, CSS та JavaScript для створення базового сайту.</p>
+        <p>Цей сайт демонструє використання шрифтів, графіки та асинхронних скриптів.</p>
         <button class="button" onclick="showAlert()">Натисніть мене</button>
     </main>
 
@@ -97,9 +106,19 @@
 
     <!-- JavaScript -->
     <script>
+        // Функція для відображення повідомлення при натисканні на кнопку
         function showAlert() {
             alert('Вітаємо на нашому сайті!');
         }
+    </script>
+
+    <!-- Підключення скриптів для аналітики або інших функцій -->
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-GC5X7PM464" async=""></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GC5X7PM464');
     </script>
 
 </body>
