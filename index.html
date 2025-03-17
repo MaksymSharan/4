@@ -1,140 +1,110 @@
+
 <!DOCTYPE html>
 <html lang="uk">
-
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Сучасний дизайн для вашого веб-сайту.">
-    <meta name="keywords" content="сайт, сучасний дизайн, веб-розробка">
-    <title>Газова Баронеса</title>
+    <title>Юля</title>
     <style>
-        /* Загальні стилі */
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f7fc;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
             color: #333;
-            line-height: 1.6;
+            height: 200vh;
         }
-
-        /* Hero Section */
-        .hero {
-            background-image: url('https://maksymsharan.github.io/4/timoshenko-1.jpg');
-            background-position: center;
-            background-size: cover;
-            color: white;
-            text-align: center;
-            padding: 0;
-            margin-top: 0;
-            position: relative;
-            height: 100vh; /* 100% висоти екрану */
-            filter: brightness(50%); /* затемнення зображення */
-        }
-
-        /* Текст поверх зображення */
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            z-index: 10; /* щоб текст був поверх */
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            z-index: 10; /* щоб текст був поверх */
-        }
-
-        .hero .typing-text {
-            font-size: 2rem;
-            font-weight: bold;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 4px solid white;
-            display: inline-block;
-            width: 0;
-            animation: typing 3s steps(30) 0s infinite, blink-caret 0.75s step-end infinite;
-            z-index: 10; /* щоб текст був поверх */
-        }
-
-        /* Анімація для тексту */
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 100%;
-            }
-        }
-
-        @keyframes blink-caret {
-            50% {
-                border-color: transparent;
-            }
-        }
-
-        /* About Section */
-        .about {
-            background-color: white;
-            padding: 50px 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
-        .about p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            bottom: 0;
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            background-image: url('https://maksymsharan.github.io/4/timoshenko-1.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: brightness(50%);
         }
-
-        /* Мобільна адаптація */
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
+        #logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #F1C40F;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        #name {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            font-family: 'Brush Script MT', cursive, sans-serif;
+            color: #F1C40F;
+        }
+        #language {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #F1C40F;
+            text-transform: uppercase;
+        }
+        #animation-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #ffcc00, #ff3300);
+            border-radius: 50%;
+            transition: all 0.5s ease-out;
+        }
+        #text-block {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            position: relative;
+            top: 150vh;
+            width: 60%;
+            margin: 0 auto;
+            font-size: 20px;
+            line-height: 1.6;
+            text-align: center;
         }
     </style>
 </head>
-
 <body>
+    <div id="background"></div>
+    <a id="logo" href="https://maksymsharan.github.io/1/">Preambula</a>
+    <div id="name">Юля</div>
+    <div id="language">EN</div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="typing-text">Газова баронеса</div>
-    </section>
+    <div id="animation-container"></div>
 
-    <!-- About Section -->
-    <section class="about">
-        <h2>Про нас</h2>
-        <p>Ми команда професіоналів, яка спеціалізується на розробці сучасних веб-рішень. Ми допомагаємо бізнесам рости та досягати успіху в цифровому світі.</p>
-    </section>
+    <div id="text-block">27 листопада 1960 року. Дніпропетровськ. На світ з'являється дівчинка в родині, яку сама пізніше назве "український латиш і українка" — звучить як екзотичний коктейль, але без парасольки. Мати — диспетчерка таксомоторного парку, жінка, яка керувала машинами, але життя вперто відмовлялося підкорятися її наказам. Батько — зник із горизонту, коли Юлі було три. Він не просто пішов — він зробив це класично, як персонаж дешевої драми: залишивши після себе тільки прізвище та купу питань, на які ніхто не чекає відповіді. Вихованням займалась лише мати — сильна жінка, яка тягнула на собі і дитину, і життя, і, здається, ще й увесь парк тих клятих таксі.</div>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <p>&copy; 2025 Мій Сайт. Всі права захищені.</p>
-    </footer>
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            const animationContainer = document.getElementById('animation-container');
+            const textBlock = document.getElementById('text-block');
 
+            let scale = Math.min(1 + scrollPos / 500, 8);
+            let borderRadius = Math.max(50 - scrollPos / 10, 0);
+
+            animationContainer.style.transform = `scale(${scale})`;
+            animationContainer.style.borderRadius = `${borderRadius}% 50% 50% ${borderRadius}%`;
+
+            if (scrollPos > window.innerHeight / 2) {
+                textBlock.style.opacity = 1;
+                textBlock.style.transform = 'translateY(0)';
+            }
+        });
+    </script>
 </body>
-
 </html>
