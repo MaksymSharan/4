@@ -29,10 +29,10 @@
             background-size: cover;
             color: white;
             text-align: center;
-            padding: 150px 20px;
+            padding: 0;
             margin-top: 0;
             position: relative;
-            height: 60vh;
+            height: 100vh; /* 100% висоти екрану */
             filter: brightness(50%); /* затемнення зображення */
         }
 
@@ -40,11 +40,13 @@
         .hero h2 {
             font-size: 3rem;
             margin-bottom: 20px;
+            z-index: 10; /* щоб текст був поверх */
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
+            z-index: 10; /* щоб текст був поверх */
         }
 
         .hero .typing-text {
@@ -56,6 +58,7 @@
             display: inline-block;
             width: 0;
             animation: typing 3s steps(30) 0s infinite, blink-caret 0.75s step-end infinite;
+            z-index: 10; /* щоб текст був поверх */
         }
 
         /* Анімація для тексту */
