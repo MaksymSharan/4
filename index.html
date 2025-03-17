@@ -1,77 +1,106 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Мій сайт</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій сайт</title>
+    <style>
+        /* CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        main {
+            padding: 20px;
+            background-color: white;
+            margin: 20px;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1><a href="/">Мій сайт</a></h1>
-      <nav>
-        <ul>
-          <li><a href="/">Головна</a></li>
-          <li><a href="/news">Новини</a></li>
-          <li><a href="/analysis">Аналізи</a></li>
-          <li><a href="/contact">Контакти</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Main content -->
-  <main>
-    <section class="hero">
-      <h2>Останні новини</h2>
-      <div class="news-list">
-        <article>
-          <h3>Назва новини 1</h3>
-          <p>Короткий опис новини...</p>
-          <a href="/news/1" class="read-more">Читати більше</a>
-        </article>
-        <article>
-          <h3>Назва новини 2</h3>
-          <p>Короткий опис новини...</p>
-          <a href="/news/2" class="read-more">Читати більше</a>
-        </article>
-        <!-- Додати більше статей тут -->
-      </div>
-    </section>
+    <!-- Header -->
+    <header>
+        <h1>Мій сайт</h1>
+        <p>Простий сайт, створений за допомогою HTML, CSS та JavaScript</p>
+    </header>
 
-    <section class="analysis">
-      <h2>Аналізи</h2>
-      <div class="analysis-list">
-        <article>
-          <h3>Аналіз 1</h3>
-          <p>Короткий опис аналізу...</p>
-          <a href="/analysis/1" class="read-more">Читати більше</a>
-        </article>
-        <article>
-          <h3>Аналіз 2</h3>
-          <p>Короткий опис аналізу...</p>
-          <a href="/analysis/2" class="read-more">Читати більше</a>
-        </article>
-        <!-- Додати більше аналізів тут -->
-      </div>
-    </section>
-  </main>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Головна</a>
+        <a href="#about">Про нас</a>
+        <a href="#services">Послуги</a>
+        <a href="#contact">Контакти</a>
+    </nav>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Мій сайт. Всі права захищені.</p>
-      <div class="socials">
-        <a href="https://facebook.com" target="_blank">Facebook</a>
-        <a href="https://twitter.com" target="_blank">Twitter</a>
-        <!-- Додати інші соцмережі -->
-      </div>
-    </div>
-  </footer>
+    <!-- Main content -->
+    <main>
+        <h2>Ласкаво просимо на наш сайт</h2>
+        <p>Це простий приклад, який використовує HTML, CSS та JavaScript для створення базового сайту.</p>
+        <button class="button" onclick="showAlert()">Натисніть мене</button>
+    </main>
 
-  <script src="script.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Мій сайт. Усі права захищені.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function showAlert() {
+            alert('Вітаємо на нашому сайті!');
+        }
+    </script>
+
 </body>
 </html>
