@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Сучасний дизайн для вашого веб-сайту.">
     <meta name="keywords" content="сайт, сучасний дизайн, веб-розробка">
-    <title>Сучасний сайт</title>
+    <title>Газова Баронеса</title>
     <style>
         /* Загальні стилі */
         * {
@@ -71,17 +71,20 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #009688, #00796b);
+            background-image: url('https://maksymsharan.github.io/4/timoshenko-1.jpg');
+            background-position: center;
+            background-size: cover;
             color: white;
             text-align: center;
-            padding: 100px 20px;
+            padding: 150px 20px;
             margin-top: 70px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            position: relative;
+            height: 60vh;
+            filter: brightness(60%);
         }
 
         .hero h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 20px;
         }
 
@@ -90,21 +93,32 @@
             margin-bottom: 30px;
         }
 
-        .hero button {
-            padding: 12px 30px;
-            background-color: #f2a365;
-            border: none;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .hero .typing-text {
+            font-size: 2rem;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 4px solid white;
+            display: inline-block;
+            width: 0;
+            animation: typing 3s steps(30) 0s infinite, blink-caret 0.75s step-end infinite;
         }
 
-        .hero button:hover {
-            background-color: #d87d4b;
-            transform: scale(1.1);
+        /* Анімація для тексту */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            50% {
+                border-color: transparent;
+            }
         }
 
         /* About Section */
@@ -133,7 +147,7 @@
             width: 100%;
         }
 
-        /* Mobile Responsive */
+        /* Мобільна адаптація */
         @media (max-width: 768px) {
             .nav ul {
                 flex-direction: column;
@@ -170,13 +184,11 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h2>Ласкаво просимо на наш сайт!</h2>
-        <p>Ми створюємо інноваційні рішення для вашого бізнесу.</p>
-        <button onclick="scrollToSection('about')">Дізнатися більше</button>
+        <div class="typing-text">Газова баронеса</div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section class="about">
         <h2>Про нас</h2>
         <p>Ми команда професіоналів, яка спеціалізується на розробці сучасних веб-рішень. Ми допомагаємо бізнесам рости та досягати успіху в цифровому світі.</p>
     </section>
@@ -185,17 +197,6 @@
     <footer class="footer">
         <p>&copy; 2025 Мій Сайт. Всі права захищені.</p>
     </footer>
-
-    <script>
-        // Функція для скролу до секції "About"
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            window.scrollTo({
-                top: section.offsetTop - 50,
-                behavior: 'smooth'
-            });
-        }
-    </script>
 
 </body>
 
