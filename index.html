@@ -1,109 +1,77 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Юля</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            color: #333;
-            height: 200vh;
-        }
-        #background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://maksymsharan.github.io/4/timoshenko-1.jpg');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-            filter: brightness(50%);
-        }
-        #logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 40px;
-            font-weight: bold;
-            color: #F1C40F;
-            text-transform: uppercase;
-            text-decoration: none;
-        }
-        #name {
-            position: absolute;
-            top: 80%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 80px;
-            font-family: 'Brush Script MT', cursive, sans-serif;
-            color: #F1C40F;
-        }
-        #language {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 30px;
-            font-weight: bold;
-            color: #F1C40F;
-            text-transform: uppercase;
-        }
-        #animation-container {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, #ffcc00, #ff3300);
-            border-radius: 50%;
-            transition: all 0.5s ease-out;
-        }
-        #text-block {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-            position: relative;
-            top: 150vh;
-            width: 60%;
-            margin: 0 auto;
-            font-size: 20px;
-            line-height: 1.6;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Мій сайт</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="background"></div>
-    <a id="logo" href="https://maksymsharan.github.io/1/">Preambula</a>
-    <div id="name">Юля</div>
-    <div id="language">EN</div>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1><a href="/">Мій сайт</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Головна</a></li>
+          <li><a href="/news">Новини</a></li>
+          <li><a href="/analysis">Аналізи</a></li>
+          <li><a href="/contact">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <div id="animation-container"></div>
+  <!-- Main content -->
+  <main>
+    <section class="hero">
+      <h2>Останні новини</h2>
+      <div class="news-list">
+        <article>
+          <h3>Назва новини 1</h3>
+          <p>Короткий опис новини...</p>
+          <a href="/news/1" class="read-more">Читати більше</a>
+        </article>
+        <article>
+          <h3>Назва новини 2</h3>
+          <p>Короткий опис новини...</p>
+          <a href="/news/2" class="read-more">Читати більше</a>
+        </article>
+        <!-- Додати більше статей тут -->
+      </div>
+    </section>
 
-    <div id="text-block">27 листопада 1960 року. Дніпропетровськ. На світ з'являється дівчинка в родині, яку сама пізніше назве "український латиш і українка" — звучить як екзотичний коктейль, але без парасольки. Мати — диспетчерка таксомоторного парку, жінка, яка керувала машинами, але життя вперто відмовлялося підкорятися її наказам. Батько — зник із горизонту, коли Юлі було три. Він не просто пішов — він зробив це класично, як персонаж дешевої драми: залишивши після себе тільки прізвище та купу питань, на які ніхто не чекає відповіді. Вихованням займалась лише мати — сильна жінка, яка тягнула на собі і дитину, і життя, і, здається, ще й увесь парк тих клятих таксі.</div>
+    <section class="analysis">
+      <h2>Аналізи</h2>
+      <div class="analysis-list">
+        <article>
+          <h3>Аналіз 1</h3>
+          <p>Короткий опис аналізу...</p>
+          <a href="/analysis/1" class="read-more">Читати більше</a>
+        </article>
+        <article>
+          <h3>Аналіз 2</h3>
+          <p>Короткий опис аналізу...</p>
+          <a href="/analysis/2" class="read-more">Читати більше</a>
+        </article>
+        <!-- Додати більше аналізів тут -->
+      </div>
+    </section>
+  </main>
 
-    <script>
-        window.addEventListener('scroll', () => {
-            const scrollPos = window.scrollY;
-            const animationContainer = document.getElementById('animation-container');
-            const textBlock = document.getElementById('text-block');
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Мій сайт. Всі права захищені.</p>
+      <div class="socials">
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <!-- Додати інші соцмережі -->
+      </div>
+    </div>
+  </footer>
 
-            let scale = Math.min(1 + scrollPos / 500, 8);
-            let borderRadius = Math.max(50 - scrollPos / 10, 0);
-
-            animationContainer.style.transform = `scale(${scale})`;
-            animationContainer.style.borderRadius = `${borderRadius}% 50% 50% ${borderRadius}%`;
-
-            if (scrollPos > window.innerHeight / 2) {
-                textBlock.style.opacity = 1;
-                textBlock.style.transform = 'translateY(0)';
-            }
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
