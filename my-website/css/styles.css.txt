@@ -1,0 +1,100 @@
+/* Загальні стилі */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  padding: 20px 0;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 2em;
+}
+
+header nav ul {
+  list-style: none;
+  text-align: right;
+}
+
+header nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/* Main content */
+main {
+  padding: 40px 0;
+}
+
+.hero h2, .analysis h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.news-list, .analysis-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+article {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+article h3 {
+  font-size: 1.5em;
+}
+
+.read-more {
+  display: block;
+  margin-top: 10px;
+  color: #00bfff;
+  text-decoration: none;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer .socials {
+  margin-top: 10px;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer .socials a:hover {
+  color: #00bfff;
+}
