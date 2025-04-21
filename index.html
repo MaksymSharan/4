@@ -1,71 +1,69 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Menu, Newspaper, Briefcase, Heart, Smartphone, Search } from "lucide-react";
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій перший проєкт на Node.js</title>
+    <!-- Підключення стилів (CSS) -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
-const articles = [
-  {
-    title: "Топ-100 найбагатших українців",
-    category: "Бізнес",
-    image: "https://via.placeholder.com/600x400",
-  },
-  {
-    title: "Як технології змінюють агросектор",
-    category: "Технології",
-    image: "https://via.placeholder.com/600x400",
-  },
-  {
-    title: "Нова хвиля української моди",
-    category: "Лайфстайл",
-    image: "https://via.placeholder.com/600x400",
-  },
-];
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
 
-export default function ForbesUkraineClone() {
-  return (
-    <div className="min-h-screen bg-[#f8f9fa] text-[#1c1c1c] font-sans">
-      {/* Header */}
-      <header className="flex justify-between items-center px-6 py-4 shadow-md sticky top-0 bg-white z-50">
-        <div className="flex items-center gap-2 text-2xl font-extrabold tracking-tight">
-          <Menu className="h-6 w-6" />
-          Forbes Ukraine
-        </div>
-        <nav className="hidden md:flex gap-8 text-sm font-medium">
-          <a href="#" className="hover:text-blue-600 transition flex items-center gap-1"><Newspaper size={16}/> Новини</a>
-          <a href="#" className="hover:text-blue-600 transition flex items-center gap-1"><Briefcase size={16}/> Бізнес</a>
-          <a href="#" className="hover:text-blue-600 transition flex items-center gap-1"><Smartphone size={16}/> Технології</a>
-          <a href="#" className="hover:text-blue-600 transition flex items-center gap-1"><Heart size={16}/> Лайфстайл</a>
-        </nav>
-        <Button variant="default" className="text-sm px-4 py-2 rounded-xl shadow">Підписка</Button>
-      </header>
+        main {
+            padding: 20px;
+            background-color: white;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-50 to-white p-8 md:p-16">
-        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight max-w-4xl mb-6">
-          Аналітика. Бізнес. Лідери думок.
-        </h1>
-        <p className="text-xl text-gray-700 max-w-2xl">
-          Головні історії про український бізнес, стартапи, інновації та стиль життя.
-        </p>
-      </section>
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Заголовок сторінки -->
+    <header>
+        <h1>Мій перший проєкт на Node.js</h1>
+    </header>
 
-      {/* Articles */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 py-12">
-        {articles.map((article, idx) => (
-          <Card key={idx} className="overflow-hidden rounded-2xl shadow hover:shadow-lg transition">
-            <img src={article.image} alt={article.title} className="w-full h-56 object-cover" />
-            <CardContent className="p-5">
-              <div className="text-sm text-blue-600 font-semibold mb-2 uppercase tracking-wider">{article.category}</div>
-              <h2 className="text-xl font-bold leading-snug hover:underline cursor-pointer">{article.title}</h2>
-            </CardContent>
-          </Card>
-        ))}
-      </section>
+    <!-- Основний контент -->
+    <main>
+        <h2>Проєкт на Node.js</h2>
+        <p>Це моя перша спроба створити проект на Node.js, і я гордий за це!</p>
+        <button id="clickButton">Натисни мене!</button>
+    </main>
 
-      {/* Footer */}
-      <footer className="text-center text-gray-500 text-sm p-8 border-t mt-12">
-        © {new Date().getFullYear()} Forbes Ukraine. Усі права захищено.
-      </footer>
-    </div>
-  );
-}
+    <!-- Футер -->
+    <footer>
+        <p>© 2025 Мій перший Node.js проєкт</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Просто для тесту виведемо текст в консоль, коли натискають кнопку
+        document.getElementById('clickButton').addEventListener('click', function() {
+            alert('Вітаю, ви натиснули кнопку!');
+            console.log('Це ваш перший проект на Node.js');
+        });
+    </script>
+</body>
+</html>
