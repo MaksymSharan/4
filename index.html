@@ -1,23 +1,23 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Menu, Newspaper, Briefcase, Heart, Smartphone } from "lucide-react";
+import { Menu, Newspaper, Briefcase, Heart, Smartphone, Search } from "lucide-react";
 
 const articles = [
   {
-    title: "",
-    category: "",
+    title: "Топ-100 найбагатших українців",
+    category: "Бізнес",
     image: "https://via.placeholder.com/600x400",
   },
   {
-    title: "",
-    category: "",
-    image: "",
+    title: "Як технології змінюють агросектор",
+    category: "Технології",
+    image: "https://via.placeholder.com/600x400",
   },
   {
-    title: "",
-    category: "",
-    image: "",
+    title: "Нова хвиля української моди",
+    category: "Лайфстайл",
+    image: "https://via.placeholder.com/600x400",
   },
 ];
 
@@ -31,18 +31,18 @@ export default function ForbesUkraineClone() {
           Forbes Ukraine
         </div>
         <nav className="hidden md:flex gap-8 text-sm font-medium">
-          <a href="#" className="hover:text-blue-600 transition flex items-center gap-1"><Newspaper size={16}/> </a>
-          <a href="#" className="hover:text-blue-600 transition flex items-center gap-1"><Briefcase size={16}/></a>
-          <a href="#" className="hover:text-blue-600 transition flex items-center gap-1"><Smartphone size={16}/> </a>
-          <a href="#" className="hover:text-blue-600 transition flex items-center gap-1"><Heart size={16}/> </a>
+          <a href="#" className="hover:text-blue-600 transition flex items-center gap-1"><Newspaper size={16}/> Новини</a>
+          <a href="#" className="hover:text-blue-600 transition flex items-center gap-1"><Briefcase size={16}/> Бізнес</a>
+          <a href="#" className="hover:text-blue-600 transition flex items-center gap-1"><Smartphone size={16}/> Технології</a>
+          <a href="#" className="hover:text-blue-600 transition flex items-center gap-1"><Heart size={16}/> Лайфстайл</a>
         </nav>
-
+        <Button variant="default" className="text-sm px-4 py-2 rounded-xl shadow">Підписка</Button>
       </header>
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-50 to-white p-8 md:p-16">
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight max-w-4xl mb-6">
-          Газова баронеса
+          Аналітика. Бізнес. Лідери думок.
         </h1>
         <p className="text-xl text-gray-700 max-w-2xl">
           Головні історії про український бізнес, стартапи, інновації та стиль життя.
@@ -64,7 +64,7 @@ export default function ForbesUkraineClone() {
 
       {/* Footer */}
       <footer className="text-center text-gray-500 text-sm p-8 border-t mt-12">
-        © {new Date().getFullYear()} Усі права захищено.
+        © {new Date().getFullYear()} Forbes Ukraine. Усі права захищено.
       </footer>
     </div>
   );
