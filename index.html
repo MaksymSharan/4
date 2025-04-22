@@ -54,10 +54,10 @@
     .container {
       max-width: 800px;
       margin: 40px auto;
-      background: white;
       padding: 30px;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      background: none;  /* Прибрано білу рамку */
+      box-shadow: none;  /* Без тіні */
     }
 
     /* Підвал */
@@ -69,14 +69,27 @@
       background: #fff;
     }
 
-    /* Соцмережеві іконки */
+    /* Посилання на соцмережі */
     .socials {
       display: flex;
       justify-content: center;
       gap: 20px;
       margin-top: 40px;
     }
-    .socials a:hover { transform: scale(1.2); }
+    .socials a {
+      color: #444;
+      text-decoration: none;
+      background-color: #e4e4e4;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .socials a:hover {
+      background-color: #d1d1d1;
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -90,7 +103,7 @@
 
   <!-- Головне зображення -->
   <section class="hero">
-    <h1>Газові схеми: розслідування</h1>
+    <h1>Газова баронеса: розслідування</h1>
   </section>
 
   <!-- Контент розслідування -->
@@ -102,7 +115,10 @@
     <!-- Соцмережеві посилання -->
     <div class="socials">
       <a href="https://facebook.com/sharer/sharer.php?u=https://maksymsharan.github.io/4/Ulia.png" target="_blank">Facebook</a>
-      <a href="https://twitter.com/intent/tweet?url=https://maksymsharan.github.io/4/Ulia.png" target="_blank">Twitter</a>
+      <a href="https://www.instagram.com/share?url=https://maksymsharan.github.io/4/Ulia.png" target="_blank">Instagram</a>
+      <a href="https://t.me/share/url?url=https://maksymsharan.github.io/4/Ulia.png" target="_blank">Telegram</a>
+      <a href="viber://forward?text=https://maksymsharan.github.io/4/Ulia.png" target="_blank">Viber</a>
+      <a href="https://www.quora.com/answer/Share-Your-Quora-Link?url=https://maksymsharan.github.io/4/Ulia.png" target="_blank">Quora</a>
       <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://maksymsharan.github.io/4/Ulia.png" target="_blank">LinkedIn</a>
     </div>
   </div>
