@@ -43,11 +43,32 @@
       align-items: center;
       justify-content: center;
     }
+
+    /* Стиль тексту для ефекту газу/вогню */
     .hero h1 {
       color: white;
       font-size: 3em;
       text-shadow: 0 2px 8px rgba(0,0,0,0.7);
       margin: 0;
+      background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: flame 3s ease-in-out infinite;
+      letter-spacing: 2px;
+    }
+
+    /* Анімація для створення ефекту полум'я */
+    @keyframes flame {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     /* Контейнер з текстом */
