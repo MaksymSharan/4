@@ -105,6 +105,7 @@
       transform: scale(1.1);
     }
 
+
     
     /* Кнопка розгортання */
 .toggle-button {
@@ -122,17 +123,26 @@
   gap: 8px;
 }
 
+/* Ефект при наведенні */
 .toggle-button:hover {
   background: #ffe5e5;
 }
 
-/* Прихований текст */
+/* Контейнер прихованого тексту */
 .hidden-text {
   display: none;
-  margin-top: 20px;
+  width: 100vw;
+  margin-left: -50vw;
+  left: 50%;
+  position: relative;
+  background-color: #eaeaea; /* Світло-сірий фон */
+  padding: 30px 20px;
+  color: #800000; /* Темно-червоний */
   font-size: 1em;
   line-height: 1.6;
+  box-sizing: border-box;
 }
+
 
 
 /* Ефект полум'я для всіх заголовків всередині статті */
