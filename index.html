@@ -235,6 +235,14 @@
     }
   }
 
+    @media (max-width: 768px) {
+    .hero {
+      background-size: contain; /* На мобілках картинка не обрізається */
+      background-color: #000; /* Фон чорний щоб виглядало акуратно */
+      padding-top: 30px;
+      padding-bottom: 30px;
+      overflow: hidden; /* Тільки на мобілках блокуємо вихід */
+    }}
 
   </style>
 </head>
