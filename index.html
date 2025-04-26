@@ -202,6 +202,40 @@
     }
   }
 
+
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Виправлено для мобільних браузерів */
+    background-image: url('https://maksymsharan.github.io/4/Ulia.png');
+    background-size: contain; /* Щоб вся картинка влізала без обрізань */
+    background-position: center top; /* Центруємо картинку по горизонталі, і трішки вверх */
+    background-repeat: no-repeat;
+    background-color: #000; /* На випадок, якщо зображення не завантажиться */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      background-size: contain; /* На мобілках теж "contain" */
+      background-position: center top;
+      min-height: 70vh; /* Трохи нижча висота на маленьких екранах */
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .hero h1 {
+      font-size: 2em;
+      padding: 0 20px;
+    }
+  }
+
+
   </style>
 </head>
 <body>
