@@ -147,84 +147,22 @@
   background-color: #fbeaea;
 }
 
-
-
-
-
-
-
-
-
-
-/* Стилі для блоку, який приховується */
+/* Блок, який приховується */
 .hidden-text-wrapper {
+  background-color: #eaeaea;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  display: none; /* Приховано за замовчуванням */
+  display: none; /* ← ← ← ВАЖЛИВО! Приховуємо за замовчуванням */
   padding: 40px 0;
-  background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000); /* Полум'яний фон */
-  background-size: 400% 400%; /* Статичний полум'яний фон */
 }
 
-/* Стилі для тексту всередині */
 .hidden-text {
-  display: none; /* Приховуємо текст за замовчуванням */
-  padding: 20px;
-  background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000); /* Статичний градієнт */
-  color: #ffffff; /* Білий текст */
   max-width: 800px;
   margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 100, 0, 0.3); /* Тінь навколо */
+  padding: 0 20px;
+  color: #800000;
+  box-sizing: border-box;
 }
-
-/* Стилі для кнопки "Дізнатися більше" */
-.toggle-button {
-  background-color: transparent;
-  border: 2px solid #ff7e00; /* Червона рамка */
-  color: #ff7e00;
-  font-size: 18px;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 25px;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.toggle-button:hover {
-  background-color: #ff7e00;
-  color: #fff;
-  transform: scale(1.1);
-}
-
-.toggle-button span {
-  font-size: 18px;
-  margin-left: 10px;
-}
-
-.toggle-button.open span {
-  transform: rotate(180deg); /* Поворот стрілки вниз при відкритті */
-}
-
-/* Стилі для анімації (опційно) */
-@keyframes flameBackground {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -369,24 +307,7 @@
 </div>
 
 
-<script>
-    // Ваш JavaScript код
-    function toggleContent(button) {
-      const hiddenText = button.nextElementSibling;
-      const text = hiddenText.querySelector(".hidden-text");
 
-      if (text.style.display === "none" || text.style.display === "") {
-        text.style.display = "block";
-        button.querySelector("span").innerHTML = "▲";  // Зміна стрілки на вверх
-      } else {
-        text.style.display = "none";
-        button.querySelector("span").innerHTML = "▼";  // Зміна стрілки на вниз
-      }
-    }
-  </script>
-
-
-    
     
     <script>
   function toggleContent(button) {
