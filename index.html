@@ -147,38 +147,39 @@
   background-color: #fbeaea;
 }
 
+
+
+
+
+
+
+
+
+
+
 /* Блок, який приховується */
 .hidden-text-wrapper {
-  background-color: #eaeaea;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  display: none; /* ← ← ← ВАЖЛИВО! Приховуємо за замовчуванням */
+  display: none; /* ← ← ← Приховано за замовчуванням */
   padding: 40px 0;
-}
-
-.hidden-text {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-  color: #800000;
-  box-sizing: border-box;
-}
-
-
-.hidden-text {
-  display: none;
-  padding: 20px;
   background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000, #ff7e00);
   background-size: 400% 400%;
   animation: flameBackground 5s ease-in-out infinite, flameFlicker 2s infinite alternate, shadowDance 3s infinite alternate;
-  color: #8b0000; /* темно-червоний текст */
-  max-width: 800px;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 0 30px rgba(255, 100, 0, 0.4);
 }
 
-/* Основна анімація руху фону */
+/* Внутрішній текст */
+.hidden-text {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #8b0000; /* Темно-червоний */
+  background: rgba(255, 255, 255, 0.1); /* Легка прозорість фону тексту */
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Анімація руху фону */
 @keyframes flameBackground {
   0% {
     background-position: 0% 50%;
@@ -202,7 +203,7 @@
   }
 }
 
-/* Спалахи яскравості */
+/* Спалахи */
 @keyframes flameFlicker {
   0% {
     filter: brightness(100%) saturate(100%);
@@ -211,7 +212,7 @@
     filter: brightness(120%) saturate(140%);
   }
   50% {
-    filter: brightness(150%) saturate(160%); /* Спалах 💥 */
+    filter: brightness(150%) saturate(160%);
   }
   60% {
     filter: brightness(120%) saturate(140%);
@@ -233,6 +234,12 @@
     box-shadow: 0 0 20px rgba(255, 100, 0, 0.3);
   }
 }
+
+
+
+
+
+
 
 
 
