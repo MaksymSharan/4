@@ -165,6 +165,76 @@
 }
 
 
+.hidden-text {
+  display: none;
+  padding: 20px;
+  background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000, #ff7e00);
+  background-size: 400% 400%;
+  animation: flameBackground 5s ease-in-out infinite, flameFlicker 2s infinite alternate, shadowDance 3s infinite alternate;
+  color: #8b0000; /* темно-червоний текст */
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 100, 0, 0.4);
+}
+
+/* Основна анімація руху фону */
+@keyframes flameBackground {
+  0% {
+    background-position: 0% 50%;
+    transform: scale(1);
+  }
+  25% {
+    background-position: 50% 60%;
+    transform: scale(1.03);
+  }
+  50% {
+    background-position: 100% 50%;
+    transform: scale(1);
+  }
+  75% {
+    background-position: 50% 40%;
+    transform: scale(0.97);
+  }
+  100% {
+    background-position: 0% 50%;
+    transform: scale(1);
+  }
+}
+
+/* Спалахи яскравості */
+@keyframes flameFlicker {
+  0% {
+    filter: brightness(100%) saturate(100%);
+  }
+  40% {
+    filter: brightness(120%) saturate(140%);
+  }
+  50% {
+    filter: brightness(150%) saturate(160%); /* Спалах 💥 */
+  }
+  60% {
+    filter: brightness(120%) saturate(140%);
+  }
+  100% {
+    filter: brightness(100%) saturate(100%);
+  }
+}
+
+/* Танцюючі тіні */
+@keyframes shadowDance {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 100, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 140, 0, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 100, 0, 0.3);
+  }
+}
+
+
 
 
 
