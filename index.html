@@ -160,24 +160,24 @@
 .hidden-text-wrapper {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  display: none; /* ← ← ← Приховано за замовчуванням */
+  display: none; /* Приховано за замовчуванням */
   padding: 40px 0;
-  background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000, #ff7e00);
-  background-size: 400% 400%;
-
+  background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000);
+  background-size: 400% 400%; /* Статичний полум'яний фон */
 }
 
-
-    
+/* Секція, яка містить текст */
 .hidden-text {
-  display: none;
+  display: none; /* Приховуємо текст за замовчуванням */
   padding: 20px;
-  background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000);
+  background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000); /* Статичний градієнт */
   color: #ffffff; /* Білий текст */
   max-width: 800px;
   margin: 0 auto;
   border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 100, 0, 0.3); /* Тінь навколо */
 }
+
 
 
 
