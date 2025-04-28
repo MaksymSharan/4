@@ -265,17 +265,18 @@
 
 
     
+
 .gas-flame-background {
   background: linear-gradient(
     90deg,
-    #00bfff, /* яскраво-блакитний */
-    #1e90ff, /* синій насичений */
-    #00ced1, /* бірюзовий */
-    #ffd700, /* золотисто-жовтий */
-    #ff4500  /* оранжево-червоний */
+    #4682b4, /* тьмяний синьо-сталевий */
+    #5f9ea0, /* приглушений бірюзовий */
+    #6495ed, /* м'який васильковий */
+    #ffa500, /* м'який оранжевий */
+    #ff6347  /* томатний червоний */
   );
   background-size: 400% 400%;
-  animation: gasFlameMove 10s ease infinite;
+  animation: gasFlameMove 12s ease infinite;
   color: white;
   padding: 20px 40px;
   font-weight: bold;
@@ -284,12 +285,15 @@
   border-radius: 8px;
 }
 
-/* Анімація руху кольорів */
+/* Анімація плавного руху кольорів */
 @keyframes gasFlameMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+
+    
 
 
 
