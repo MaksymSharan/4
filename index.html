@@ -196,66 +196,86 @@
 
     
 
-.carousel-container {
-  position: relative;
-  max-width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
-  text-align: center;
-}
 
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
 
-.carousel-image {
-  max-width: 100%;
-  height: auto;
-  flex-shrink: 0;
-  border-radius: 10px;
-}
+    .carousel-container {
+      position: relative;
+      max-width: 80%;
+      margin: 0 auto;
+      overflow: hidden;
+      text-align: center;
+    }
 
-.carousel-prev,
-.carousel-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  border: none;
-  padding: 12px;
-  cursor: pointer;
-  font-size: 1.5em;
-  border-radius: 50%;
-  z-index: 10;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      justify-content: center; /* Центрування зображення */
+    }
 
-.carousel-prev {
-  left: 10px;
-}
+    .carousel-image {
+      max-width: 100%;
+      height: 300px; /* Встановлено однаковий розмір для всіх зображень */
+      object-fit: cover;
+      flex-shrink: 0;
+      display: none; /* Зображення приховані за замовчуванням */
+    }
 
-.carousel-next {
-  right: 10px;
-}
+    .carousel-image.active {
+      display: block; /* Покажемо тільки активне зображення */
+    }
 
-.carousel-prev:hover,
-.carousel-next:hover {
-  background-color: rgba(0, 0, 0, 0.6);
-}
+    .carousel-prev,
+    .carousel-next {
+      position: absolute;
+      top: 100%; /* Позиціонуємо стрілки нижче зображень */
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1.5em;
+      font-weight: bold;
+      z-index: 10;
+      border-radius: 0 0 10px 10px; /* Створюємо "двокутник" без великого ребра */
+      transition: background-color 0.3s ease;
+    }
 
-.carousel-indicator {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  color: #fff;
-  font-size: 1.2em;
-  font-weight: bold;
-  z-index: 10;
-}
+    .carousel-prev {
+      left: 10px;
+    }
+
+    .carousel-next {
+      right: 10px;
+    }
+
+    .carousel-prev:hover,
+    .carousel-next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .carousel-indicator {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-size: 1.2em;
+      font-weight: bold;
+      z-index: 10;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -354,45 +374,51 @@
 
 
 
-<div class="carousel-container">
-  <button class="carousel-prev">◁</button>
-  <div class="carousel">
-    <img src="https://maksymsharan.github.io/4/Y1.jpg" alt="Фото 1" class="carousel-image">
-    <img src="https://maksymsharan.github.io/4/Y2.jpg" alt="Фото 2" class="carousel-image">
-    <img src="https://maksymsharan.github.io/4/Y3.jpg" alt="Фото 3" class="carousel-image">
-    <img src="https://maksymsharan.github.io/4/Y4.jpg" alt="Фото 4" class="carousel-image">
-    <img src="https://maksymsharan.github.io/4/Y5.jpg" alt="Фото 5" class="carousel-image">
+
+
+
+
+
+
+
+
+  <div class="carousel-container">
+    <button class="carousel-prev">◁</button>
+    <div class="carousel">
+      <img src="https://maksymsharan.github.io/4/Y1.jpg" alt="Фото 1" class="carousel-image active">
+      <img src="https://maksymsharan.github.io/4/Y2.jpg" alt="Фото 2" class="carousel-image">
+      <img src="https://maksymsharan.github.io/4/Y3.jpg" alt="Фото 3" class="carousel-image">
+      <img src="https://maksymsharan.github.io/4/Y4.jpg" alt="Фото 4" class="carousel-image">
+      <img src="https://maksymsharan.github.io/4/Y5.jpg" alt="Фото 5" class="carousel-image">
+    </div>
+    <button class="carousel-next">▷</button>
+    <div class="carousel-indicator">
+      <span id="current-slide">1</span> / <span id="total-slides">5</span>
+    </div>
   </div>
-  <button class="carousel-next">▷</button>
-  <div class="carousel-indicator">
-    <span id="current-slide">1</span> / <span id="total-slides">5</span>
-  </div>
-</div>
 
-
-
-
-
-
-
-
-
-    <script>
+  <!-- JavaScript вставляємо тут перед закриваючим тегом body -->
+  <script>
     let currentIndex = 0;
 
     const images = document.querySelectorAll('.carousel-image');
     const totalImages = images.length;
     const prevButton = document.querySelector('.carousel-prev');
     const nextButton = document.querySelector('.carousel-next');
-    const carousel = document.querySelector('.carousel');
     const currentSlide = document.getElementById('current-slide');
     const totalSlides = document.getElementById('total-slides');
 
     totalSlides.textContent = totalImages; // Встановлюємо загальну кількість слайдів
 
     function updateCarouselPosition() {
-      const offset = -currentIndex * 100;
-      carousel.style.transform = `translateX(${offset}%)`;
+      // Сховуємо всі зображення
+      images.forEach((image, index) => {
+        image.classList.remove('active');
+      });
+
+      // Показуємо тільки поточне зображення
+      images[currentIndex].classList.add('active');
+
       currentSlide.textContent = currentIndex + 1; // Оновлюємо номер поточного слайду
     }
 
@@ -406,6 +432,20 @@
       updateCarouselPosition();
     });
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
