@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -145,21 +146,19 @@
 /* Блок, який приховується */
 .hidden-text-wrapper {
   background-color: #eaeaea;
-  width: 100%;
+  width: 100vw;
   margin-left: calc(-50vw + 50%);
   display: none; /* ← ← ← ВАЖЛИВО! Приховуємо за замовчуванням */
   padding: 40px 0;
-  overflow-x: hidden;
 }
 
-.hidden-text-wrapper {
-  background-color: #0a2233; /* або будь-який інший фон */
-  width: 100%;
-  overflow-x: hidden;
-  padding: 30px 0;
-  display: none;
+.hidden-text {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #800000;
+  box-sizing: border-box;
 }
-
 
 /* Базовий стиль для фото */
 .responsive-image {
