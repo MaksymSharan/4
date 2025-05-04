@@ -275,6 +275,48 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+.morality-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Прихований блок */
+.hidden-text-wrapper {
+  background-color: #3a3a3a; /* сірий, тьмяний */
+  width: 100%;
+  overflow-x: hidden;
+  padding: 20px 0;
+  display: none;
+}
+
+/* Текст всередині */
+.hidden-text {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: #f0f0f0;
+  font-weight: bold;
+  font-size: 1.1em;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+/* Кнопка */
+.toggle-button {
+  background: none;
+  border: 2px solid #c0392b;
+  color: #c0392b;
+  padding: 10px 24px;
+  font-size: 1.1em;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #fbeaea;
+}
     
   </style>
 </head>
@@ -401,15 +443,17 @@
 <p>Кіпр у цій схемі був ключовим. Завдяки іноземному інвестору КУБ отримував не лише шану серед бізнесменів, а й солідні податкові пільги – у 90-х це було рівнозначно перемозі у лотерею. Крутилися мільйони доларів, а в офіційній бухгалтерії все зводилося в нуль: мовляв, повертаємо гроші інвестору, податки платити нічим. У складі кіпрських «засновників» не було жодних реальних кіпріотів: лише сама Юля Тимошенко, її чоловік Сашко і їхній партнер Гравець. </p>
 <p>Тож шлях Юлії Володимирівни від прокату відеокасет до прокату бензинових цистерн був блискавичним. І в той час, коли інші ще тільки освоювали нові реалії, вона вже успішно продавала не ілюзії, а справжнє чорне золото. </p>
 
-<button class="toggle-button" onclick="toggleHiddenText()">Трохи моралістики</button>
+<div class="morality-section">
+  <button class="toggle-button" onclick="toggleHiddenText()">Трохи моралістики</button>
 
-<div class="hidden-text-wrapper" id="morality-section">
-  <div class="hidden-text">
-    Іноді трохи моралі не завадить. Ми всі відповідальні за майбутнє, яке творимо своїми діями сьогодні.
+  <div class="hidden-text-wrapper" id="morality-section">
+    <div class="hidden-text">
+      Іноді трохи моралі не завадить. Ми всі відповідальні за майбутнє, яке творимо своїми діями сьогодні.
+    </div>
   </div>
 </div>
 
-      <script>
+<script>
   function toggleHiddenText() {
     const section = document.getElementById('morality-section');
     section.style.display = (section.style.display === 'block') ? 'none' : 'block';
