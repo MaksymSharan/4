@@ -373,20 +373,18 @@ footer {
 
 
 
-    
-
 .toc-wrapper {
   max-width: 800px;
-  margin: 20px auto 10px 10px; /* Зміщення вліво */
+  margin: 20px auto 10px 10px;
   font-family: sans-serif;
 }
 
 .toc-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   cursor: pointer;
-  padding: 10px 0;
+  padding: 10px 10px 10px 0;
   position: relative;
   gap: 10px;
 }
@@ -412,23 +410,24 @@ footer {
   width: 30px;
 }
 
+.toc-toggle-icon {
+  font-size: 1.5em;
+  color: #777;
+  margin-right: 5px;
+}
+
 .toc-label {
   font-weight: bold;
   font-size: 1.2em;
   color: #333;
 }
 
-.toc-toggle-icon {
-  font-size: 1.5em;
-  color: #777;
-}
-
 .toc-preambula {
+  margin-left: auto;
   color: #444;
   font-weight: bold;
   text-decoration: none;
   font-size: 0.9em;
-  margin-left: auto;
 }
 
 .toc-content {
@@ -437,19 +436,16 @@ footer {
   padding-left: 10px;
 }
 
-.toc-content h3 {
-  margin: 10px 0 2px;
-  color: #888;
-  font-size: 1em;
+.toc-item {
+  margin: 5px 0;
+  color: #333;
+  font-size: 0.95em;
 }
 
-.toc-content a {
-  display: block;
-  margin-bottom: 8px;
-  color: #333;
+.toc-item a {
+  color: #222;
   text-decoration: none;
-  font-weight: 500;
-  padding-left: 10px;
+  margin-left: 4px;
 }
 
 .toc-divider {
@@ -457,6 +453,8 @@ footer {
   border-top: 1px solid #ccc;
   margin: 20px 0 30px;
 }
+
+
 
 
 
@@ -492,30 +490,21 @@ footer {
       <div class="line long"></div>
       <div class="line short"></div>
     </div>
-    <span class="toc-label" id="toc-label">Зміст</span>
     <span class="toc-toggle-icon" id="toc-icon">＋</span>
+    <span class="toc-label" id="toc-label">Зміст</span>
     <a class="toc-preambula" href="https://maksymsharan.github.io/1/" target="_blank">PREAMBULA</a>
   </div>
 
   <div class="toc-content" id="toc-content">
-    <h3>Глава 1</h3>
-    <a href="#vstup">Вступ</a>
-    <h3>Глава 2</h3>
-    <a href="#shkola">Шкільні роки, сім'я та освіта</a>
-    <h3>Глава 3</h3>
-    <a href="#play">Play ►</a>
-    <h3>Глава 4</h3>
-    <a href="#bensin">Затока можливостей: від касет до бензину</a>
-    <h3>Глава 5</h3>
-    <a href="#kupyury">Купюри, які мріяли літати АБО 500 дозволено, а 100 000 – бажано</a>
-    <h3>Глава 6</h3>
-    <a href="#portfel">Жінка з портфелем</a>
-    <h3>Глава 7</h3>
-    <a href="#podatky">Мистецтво перереєстрації, або Як не платити податки й не червоніти</a>
-    <h3>Глава 8</h3>
-    <a href="#lazarenko">Опіка великого друга Лазаренка (1995–1997)</a>
-    <h3>Глава 9</h3>
-    <a href="#politika">Перехід до великої політики та нові випробування</a>
+    <div class="toc-item"><strong>Глава 1:</strong> <a href="#vstup">Вступ</a></div>
+    <div class="toc-item"><strong>Глава 2:</strong> <a href="#shkola">Шкільні роки, сім'я та освіта</a></div>
+    <div class="toc-item"><strong>Глава 3:</strong> <a href="#play">Play ►</a></div>
+    <div class="toc-item"><strong>Глава 4:</strong> <a href="#bensin">Затока можливостей: від касет до бензину</a></div>
+    <div class="toc-item"><strong>Глава 5:</strong> <a href="#kupyury">Купюри, які мріяли літати…</a></div>
+    <div class="toc-item"><strong>Глава 6:</strong> <a href="#portfel">Жінка з портфелем</a></div>
+    <div class="toc-item"><strong>Глава 7:</strong> <a href="#podatky">Мистецтво перереєстрації…</a></div>
+    <div class="toc-item"><strong>Глава 8:</strong> <a href="#lazarenko">Опіка великого друга Лазаренка</a></div>
+    <div class="toc-item"><strong>Глава 9:</strong> <a href="#politika">Перехід до великої політики…</a></div>
   </div>
 </div>
 
