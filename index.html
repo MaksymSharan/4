@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -276,21 +275,46 @@
   100% { background-position: 0% 50%; }
 }
 
+/* Центрування всієї секції */
 .morality-section {
   text-align: center;
   margin: 40px 0;
 }
 
-/* Прихований блок */
+/* Кнопка */
+.toggle-button {
+  background: none;
+  border: 2px solid #c0392b;
+  color: #c0392b;
+  padding: 12px 28px;
+  font-size: 1.1em;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Стрілка */
+.toggle-button .arrow {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Розгорнута стрілка (додатковий клас JS може додати, якщо потрібно) */
+.toggle-button.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* Прихований текст */
 .hidden-text-wrapper {
-  background-color: #3a3a3a; /* сірий, тьмяний */
+  background-color: #3a3a3a;
   width: 100%;
   overflow-x: hidden;
   padding: 20px 0;
   display: none;
 }
 
-/* Текст всередині */
+/* Сам текст — вирівнюємо по центру */
 .hidden-text {
   max-width: 700px;
   margin: 0 auto;
@@ -299,25 +323,9 @@
   font-weight: bold;
   font-size: 1.1em;
   line-height: 1.6;
-  box-sizing: border-box;
+  text-align: center;
 }
 
-/* Кнопка */
-.toggle-button {
-  background: none;
-  border: 2px solid #c0392b;
-  color: #c0392b;
-  padding: 10px 24px;
-  font-size: 1.1em;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.toggle-button:hover {
-  background-color: #fbeaea;
-}
-    
   </style>
 </head>
 <body>
@@ -444,7 +452,10 @@
 <p>Тож шлях Юлії Володимирівни від прокату відеокасет до прокату бензинових цистерн був блискавичним. І в той час, коли інші ще тільки освоювали нові реалії, вона вже успішно продавала не ілюзії, а справжнє чорне золото. </p>
 
 <div class="morality-section">
-  <button class="toggle-button" onclick="toggleHiddenText()">Трохи моралістики</button>
+  <button class="toggle-button" onclick="toggleHiddenText()">
+    Трохи моралістики
+    <span class="arrow">&#x25BC;</span> <!-- Стрілка вниз -->
+  </button>
 
   <div class="hidden-text-wrapper" id="morality-section">
     <div class="hidden-text">
@@ -453,12 +464,18 @@
   </div>
 </div>
 
-<script>
+      <script>
   function toggleHiddenText() {
     const section = document.getElementById('morality-section');
-    section.style.display = (section.style.display === 'block') ? 'none' : 'block';
+    const button = document.querySelector('.toggle-button');
+    
+    const isVisible = section.style.display === 'block';
+    
+    section.style.display = isVisible ? 'none' : 'block';
+    button.classList.toggle('open', !isVisible); // Для стрілки
   }
 </script>
+
 
       <p>Упродовж 1992–1994 років КУБ перетворюється на неофіційного паливного феодала Дніпропетровщини, монополізуючи постачання нафтопродуктів для місцевого аграрного царства. Та не все було так просто. Грошей, як і демократії, тоді не вистачало. Але бартер – ось та золота формула, яка дозволяла перетворювати бензин на тонни буряка, мішки пшениці й вагони кукурудзи. Селяни віддавали врожай, КУБ – пальне, а десь на перехресті бухгалтерських книг з’являвся прибуток. </p>
 <p>Все це – у найкращих традиціях раннього українського капіталізму: з блиском в очах, без податків і з мінімумом етики. Та й навіщо вона, коли на кону – ПОВНИЙ контроль над пальним для цілого регіону?! </p>
