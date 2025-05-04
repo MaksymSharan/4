@@ -424,6 +424,16 @@ footer {
 
       <p>Так починається підприємницька історія Юлі – не з мільйонів, не з вілл і яхт, а з відеопрокату у провінційному місті, де найціннішим активом був телевізор «Рубін» і доступ до зв'язків у виконкомі.</p>
 
+
+
+
+
+
+
+
+
+
+
 <!-- Кнопка "Дізнатися більше" -->
 <button class="toggle-button" onclick="toggleInfoText(this)">
   Дізнатися більше <span class="arrow">↓</span>
@@ -443,19 +453,13 @@ footer {
 
 <script>
   function toggleInfoText(button) {
-    const textBlock = button.nextElementSibling;
+    const wrapper = button.nextElementSibling;
     const arrow = button.querySelector('.arrow');
+    const isOpen = wrapper.classList.contains('open');
 
-    const isVisible = textBlock.style.display === 'block';
-
-    textBlock.style.display = isVisible ? 'none' : 'block';
-    arrow.textContent = isVisible ? '↓' : '↑';
-
-    if (!isVisible) {
-      textBlock.classList.add('sharp-corners');
-    } else {
-      textBlock.classList.remove('sharp-corners');
-    }
+    wrapper.classList.toggle('open');
+    arrow.textContent = isOpen ? '↓' : '↑';
+    button.firstChild.textContent = isOpen ? 'Дізнатися більше ' : 'Приховати ';
   }
 </script>
 
