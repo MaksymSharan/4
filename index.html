@@ -321,31 +321,46 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+  .toggle-wrapper {
+    max-width: 800px;
+    margin: 20px auto;
+  }
+
   .toggle-container {
     background-color: #e0e0e0;
-    padding: 10px 15px;
+    padding: 12px 20px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    border-radius: 5px;
-    user-select: none;
-    width: fit-content;
-    margin-bottom: 10px;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .toggle-symbol {
-    font-size: 18px;
-    margin-left: 10px;
+    font-size: 24px;
   }
 
   .dashed-box {
     border: 2px dashed #888;
-    padding: 15px;
+    padding: 20px;
     margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 6px;
     display: none;
+    background-color: #fafafa;
   }
 
 
@@ -353,6 +368,9 @@ footer {
 
 
 
+
+
+    
 
 
 
@@ -568,22 +586,21 @@ footer {
       
       
       
-      <div onclick="toggleExpandable(this)">
+<div class="toggle-wrapper" onclick="toggleExpandable(this)">
   <div class="toggle-container">
     <span class="toggle-label">Детальніше</span>
     <span class="toggle-symbol">+</span>
   </div>
   <div class="dashed-box">
-    <p>Це додаткова інформація, яка з’являється після натискання. Ви можете тут розмістити будь-який текст, навіть кілька абзаців.</p>
+    <p>Це додаткова інформація, яка з’являється після натискання. Можна помістити сюди будь-який текст або елемент.</p>
   </div>
 </div>
-      
-      
-  <script>
-  function toggleExpandable(container) {
-    const label = container.querySelector('.toggle-label');
-    const symbol = container.querySelector('.toggle-symbol');
-    const box = container.querySelector('.dashed-box');
+
+<script>
+  function toggleExpandable(wrapper) {
+    const label = wrapper.querySelector('.toggle-label');
+    const symbol = wrapper.querySelector('.toggle-symbol');
+    const box = wrapper.querySelector('.dashed-box');
 
     const isVisible = box.style.display === 'block';
 
