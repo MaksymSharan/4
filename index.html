@@ -317,7 +317,9 @@
   line-height: 1.5;
 }
 
-    
+    .morality-text-wrapper.sharp-corners {
+  border-radius: 0; /* гострі кути */
+}
 
   </style>
 </head>
@@ -462,16 +464,24 @@
 </div>
 
 
-      <script>
+<script>
   function toggleMoralityText(button) {
     const textBlock = button.nextElementSibling;
     const arrow = button.querySelector('.arrow');
 
     const isVisible = textBlock.style.display === 'block';
+
     textBlock.style.display = isVisible ? 'none' : 'block';
     arrow.textContent = isVisible ? '↓' : '↑';
+
+    if (!isVisible) {
+      textBlock.classList.add('sharp-corners');
+    } else {
+      textBlock.classList.remove('sharp-corners');
+    }
   }
 </script>
+
 
 
       
