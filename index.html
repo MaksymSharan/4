@@ -14,12 +14,7 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.7.4/dist/smooth-scrollbar.js"></script>
-<script>
-  Scrollbar.init(document.body, {
-    damping: 0.08, // схоже на Edge
-  });
-</script>
+
 
 
 
@@ -393,11 +388,10 @@ footer {
     
   </style>
 </head>
+
+
 <body>
-
-
-
-
+  <div id="my-scroll-wrapper">
 
 
 
@@ -736,5 +730,13 @@ function toggleMoreInfo() {
   <footer>
     &copy; 2025 Усі права захищені.
   </footer>
+      </div>
 </body>
+
+<script>
+  Scrollbar.init(document.querySelector('#my-scroll-wrapper'), {
+    damping: 0.08
+  });
+</script>
+
 </html>
