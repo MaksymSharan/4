@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -316,24 +317,6 @@ footer {
   box-sizing: border-box;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
   </style>
 </head>
 <body>
@@ -442,83 +425,40 @@ footer {
 
       <p>Так починається підприємницька історія Юлі – не з мільйонів, не з вілл і яхт, а з відеопрокату у провінційному місті, де найціннішим активом був телевізор «Рубін» і доступ до зв'язків у виконкомі.</p>
 
-
-
-
-
-
-
-
-
-<style>
-  .toggle-button {
-    background: none;
-    border: none;
-    font-size: 1.1em;
-    color: #007BFF;
-    cursor: pointer;
-    margin: 20px auto;
-    display: block;
-    text-align: center;
-  }
-
-  .toggle-button .arrow {
-    font-weight: bold;
-    margin-left: 5px;
-  }
-
-  .info-text-wrapper {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-  }
-
-  .info-text-wrapper.open {
-    max-height: 1000px;
-  }
-
-  .info-text {
-    background: #f9f9f9;
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 12px;
-    font-size: 1em;
-    line-height: 1.6;
-  }
-</style>
-
-<!-- Кнопка -->
+<!-- Кнопка "Дізнатися більше" -->
 <button class="toggle-button" onclick="toggleInfoText(this)">
-  <span class="label">Дізнатися більше</span> <span class="arrow">↓</span>
+  Дізнатися більше <span class="arrow">↓</span>
 </button>
 
 <!-- Прихований блок -->
 <div class="info-text-wrapper">
   <div class="info-text">
-    <p>Ключову роль у стрімкому злеті відіграли й комсомольські зв’язки...</p>
-    <p>Чи було це злочином? Використовувати партійні та комсомольські зв'язки у ті часи було радше правилом...</p>
+
+<p>Ключову роль у стрімкому злеті відіграли й комсомольські зв’язки. Дружба з молодими лідерами регіону, такими як керівник відділу пропаганди обкому комсомолу Олександр Турчинов, допомогла Юлі взяти під контроль дискотеки, кафе та концертні майданчики. Саме тоді перші великі гроші прийшли завдяки таким іменам, як Женя Білоусов, «Грецька смоківниця», «Ласкавий май» і навіть «Останній незайманець Америки».</p>
+<p>Чи було це злочином? Використовувати партійні та комсомольські зв'язки у ті часи було радше правилом, ніж виключенням. Адже хто би не скористався нагодою?</p>
+
   </div>
 </div>
 
+
+
 <script>
   function toggleInfoText(button) {
-    const wrapper = button.nextElementSibling;
-    const label = button.querySelector('.label');
+    const textBlock = button.nextElementSibling;
     const arrow = button.querySelector('.arrow');
-    const isOpen = wrapper.classList.contains('open');
 
-    wrapper.classList.toggle('open');
-    label.textContent = isOpen ? 'Дізнатися більше' : 'Приховати';
-    arrow.textContent = isOpen ? '↓' : '↑';
+    const isVisible = textBlock.style.display === 'block';
+
+    textBlock.style.display = isVisible ? 'none' : 'block';
+    arrow.textContent = isVisible ? '↓' : '↑';
+
+    if (!isVisible) {
+      textBlock.classList.add('sharp-corners');
+    } else {
+      textBlock.classList.remove('sharp-corners');
+    }
   }
 </script>
-
-
-
-
-
-      
-
 
       
 
