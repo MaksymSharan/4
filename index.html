@@ -348,6 +348,7 @@ footer {
     border-bottom: 2px dashed #888;
   }
 
+
   .toggle-symbol {
     font-size: 28px;
     color: #666;
@@ -366,6 +367,102 @@ footer {
   }
 
 
+
+
+
+
+
+
+    
+
+.toc-wrapper {
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: sans-serif;
+}
+
+.toc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 10px 0;
+  position: relative;
+}
+
+.toc-lines {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.line {
+  height: 2px;
+  background-color: #999;
+  margin: 2px 0;
+  border-radius: 2px;
+}
+
+.line.long {
+  width: 60px;
+}
+
+.line.short {
+  width: 30px;
+}
+
+.toc-label {
+  flex-grow: 1;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.toc-toggle-icon {
+  font-size: 1.5em;
+  margin-left: 10px;
+  color: #777;
+}
+
+.toc-preambula {
+  color: #444;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.9em;
+  margin-left: auto;
+}
+
+.toc-content {
+  display: none;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.toc-content h3 {
+  margin: 10px 0 2px;
+  color: #888;
+  font-size: 1em;
+}
+
+.toc-content a {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.toc-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0 30px;
+}
+
+
+
+
+  
 
     
   </style>
@@ -390,37 +487,58 @@ footer {
 
 
 
-  <nav style="background-color: #f0f0f0; padding: 20px; border-radius: 8px; max-width: 800px; margin: 0 auto 40px auto;">
-  <ul style="list-style: none; padding-left: 0; font-size: 1.1em;">
-    <li style="color: gray; font-weight: bold;">Глава 1</li>
-    <li><a href="#vstup" style="color: #222; text-decoration: none;">Вступ</a></li>
-    
-    <li style="color: gray; font-weight: bold; margin-top: 15px;">Глава 2</li>
-    <li><a href="#shkola" style="color: #222; text-decoration: none;">Шкільні роки, сім'я та освіта</a></li>
-    
-    <li style="color: gray; font-weight: bold; margin-top: 15px;">Глава 3</li>
-    <li><a href="#play" style="color: #222; text-decoration: none;">Play ►</a></li>
-    
-    <li style="color: gray; font-weight: bold; margin-top: 15px;">Глава 4</li>
-    <li><a href="#bensin" style="color: #222; text-decoration: none;">Затока можливостей: від касет до бензину</a></li>
-    
-    <li style="color: gray; font-weight: bold; margin-top: 15px;">Глава 5</li>
-    <li><a href="#kupyury" style="color: #222; text-decoration: none;">Купюри, які мріяли літати АБО 500 дозволено, а 100 000 – бажано</a></li>
-    
-    <li style="color: gray; font-weight: bold; margin-top: 15px;">Глава 6</li>
-    <li><a href="#portfel" style="color: #222; text-decoration: none;">Жінка з портфелем</a></li>
-    
-    <li style="color: gray; font-weight: bold; margin-top: 15px;">Глава 7</li>
-    <li><a href="#podatky" style="color: #222; text-decoration: none;">Мистецтво перереєстрації, або Як не платити податки й не червоніти</a></li>
-    
-    <li style="color: gray; font-weight: bold; margin-top: 15px;">Глава 8</li>
-    <li><a href="#lazarenko" style="color: #222; text-decoration: none;">Опіка великого друга Лазаренка (1995–1997)</a></li>
-    
-    <li style="color: gray; font-weight: bold; margin-top: 15px;">Глава 9</li>
-    <li><a href="#politika" style="color: #222; text-decoration: none;">Перехід до великої політики та нові випробування</a></li>
-  </ul>
-</nav>
+<div class="toc-wrapper">
+  <div class="toc-header" onclick="toggleToc()">
+    <div class="toc-lines">
+      <div class="line long"></div>
+      <div class="line short"></div>
+    </div>
+    <span class="toc-label" id="toc-label">Зміст</span>
+    <span class="toc-toggle-icon" id="toc-icon">＋</span>
+    <a class="toc-preambula" href="https://maksymsharan.github.io/1/" target="_blank">PREAMBULA</a>
+  </div>
 
+  <div class="toc-content" id="toc-content">
+    <h3>Глава 1</h3>
+    <a href="#vstup">Вступ</a>
+    <h3>Глава 2</h3>
+    <a href="#shkola">Шкільні роки, сім'я та освіта</a>
+    <h3>Глава 3</h3>
+    <a href="#play">Play ►</a>
+    <h3>Глава 4</h3>
+    <a href="#bensin">Затока можливостей: від касет до бензину</a>
+    <h3>Глава 5</h3>
+    <a href="#kupyury">Купюри, які мріяли літати АБО 500 дозволено, а 100 000 – бажано</a>
+    <h3>Глава 6</h3>
+    <a href="#portfel">Жінка з портфелем</a>
+    <h3>Глава 7</h3>
+    <a href="#podatky">Мистецтво перереєстрації, або Як не платити податки й не червоніти</a>
+    <h3>Глава 8</h3>
+    <a href="#lazarenko">Опіка великого друга Лазаренка (1995–1997)</a>
+    <h3>Глава 9</h3>
+    <a href="#politika">Перехід до великої політики та нові випробування</a>
+  </div>
+</div>
+
+<hr class="toc-divider">
+
+
+
+
+
+  
+<script>
+  function toggleToc() {
+    const content = document.getElementById('toc-content');
+    const label = document.getElementById('toc-label');
+    const icon = document.getElementById('toc-icon');
+    const isOpen = content.style.display === 'block';
+
+    content.style.display = isOpen ? 'none' : 'block';
+    label.textContent = isOpen ? 'Зміст' : 'Закрити';
+    icon.textContent = isOpen ? '＋' : '✕';
+  }
+</script>
 
 
 
@@ -434,12 +552,6 @@ footer {
 
 
 
-
-
-
-
-
-  
 
 
 
