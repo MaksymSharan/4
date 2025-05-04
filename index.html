@@ -329,10 +329,6 @@ footer {
 
 
 
-
-
-
-
   .toggle-wrapper {
     max-width: 800px;
     margin: 20px auto;
@@ -352,6 +348,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
+    color: #666; /* Сіруватий текст */
     width: 100%;
     box-sizing: border-box;
     border-bottom: 2px dashed transparent;
@@ -362,18 +359,38 @@ footer {
   }
 
   .toggle-symbol {
-    font-size: 24px;
+    font-size: 28px; /* Трохи більший символ */
+    color: #666;      /* Сіруватий колір */
+    line-height: 1;
   }
 
   .dashed-box {
     padding: 20px;
     display: none;
     background-color: #fafafa;
+    color: #333;
   }
 
   .toggle-wrapper.open .dashed-box {
     display: block;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -606,9 +623,6 @@ footer {
 
 
 
-
-      
-      
 <div class="toggle-wrapper" onclick="toggleExpandable(this)">
   <div class="toggle-container">
     <span class="toggle-label">Детальніше</span>
@@ -619,8 +633,6 @@ footer {
   </div>
 </div>
 
-
-      
 <script>
   function toggleExpandable(wrapper) {
     const label = wrapper.querySelector('.toggle-label');
@@ -633,6 +645,9 @@ footer {
     symbol.textContent = isOpen ? '+' : '−';
   }
 </script>
+      
+      
+
     
       
 
