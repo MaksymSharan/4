@@ -332,9 +332,16 @@ footer {
 
 
 
+
   .toggle-wrapper {
     max-width: 800px;
     margin: 20px auto;
+    border: 2px dashed transparent;
+    box-sizing: border-box;
+  }
+
+  .toggle-wrapper.open {
+    border-color: #888;
   }
 
   .toggle-container {
@@ -345,9 +352,13 @@ footer {
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    border-radius: 6px;
     width: 100%;
     box-sizing: border-box;
+    border-bottom: 2px dashed transparent;
+  }
+
+  .toggle-wrapper.open .toggle-container {
+    border-bottom: 2px dashed #888;
   }
 
   .toggle-symbol {
@@ -355,14 +366,22 @@ footer {
   }
 
   .dashed-box {
-    border: 2px dashed #888;
     padding: 20px;
-    margin-top: 10px;
-    border-radius: 6px;
     display: none;
     background-color: #fafafa;
   }
 
+  .toggle-wrapper.open .dashed-box {
+    display: block;
+  }
+
+
+
+
+
+
+
+    
 
 
 
@@ -584,6 +603,10 @@ footer {
 
       
       
+
+
+
+
       
       
 <div class="toggle-wrapper" onclick="toggleExpandable(this)">
@@ -592,21 +615,22 @@ footer {
     <span class="toggle-symbol">+</span>
   </div>
   <div class="dashed-box">
-    <p>Це додаткова інформація, яка з’являється після натискання. Можна помістити сюди будь-який текст або елемент.</p>
+    <p>Це додаткова інформація, яка з’являється після натискання. Тут може бути будь-який текст або вміст.</p>
   </div>
 </div>
 
+
+      
 <script>
   function toggleExpandable(wrapper) {
     const label = wrapper.querySelector('.toggle-label');
     const symbol = wrapper.querySelector('.toggle-symbol');
-    const box = wrapper.querySelector('.dashed-box');
 
-    const isVisible = box.style.display === 'block';
+    const isOpen = wrapper.classList.contains('open');
+    wrapper.classList.toggle('open');
 
-    box.style.display = isVisible ? 'none' : 'block';
-    label.textContent = isVisible ? 'Детальніше' : 'Згорнути';
-    symbol.textContent = isVisible ? '+' : '−';
+    label.textContent = isOpen ? 'Детальніше' : 'Згорнути';
+    symbol.textContent = isOpen ? '+' : '−';
   }
 </script>
     
