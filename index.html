@@ -323,42 +323,7 @@ footer {
 
 
 
-  .toggle-button3 {
-    background: none;
-    border: none;
-    font-size: 1.1em;
-    color: #007BFF;
-    cursor: pointer;
-    margin-top: 20px;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
-  .toggle-button .arrow {
-    font-weight: bold;
-    margin-left: 5px;
-  }
-
-  .info-text-wrapper3 {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-  }
-
-  .info-text-wrapper.open {
-    max-height: 1000px; /* достатньо велике, щоб вміст помістився */
-  }
-
-  .info-text3 {
-    background: #f9f9f9;
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 12px;
-    font-size: 1em;
-    line-height: 1.6;
-  }
 
 
 
@@ -485,31 +450,74 @@ footer {
 
 
 
+<style>
+  .toggle-button {
+    background: none;
+    border: none;
+    font-size: 1.1em;
+    color: #007BFF;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+  }
 
+  .toggle-button .arrow {
+    font-weight: bold;
+    margin-left: 5px;
+  }
+
+  .info-text-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .info-text-wrapper.open {
+    max-height: 1000px;
+  }
+
+  .info-text {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 12px;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+</style>
+
+<!-- Кнопка -->
+<button class="toggle-button" onclick="toggleInfoText(this)">
+  <span class="label">Дізнатися більше</span> <span class="arrow">↓</span>
+</button>
 
 <!-- Прихований блок -->
-<div class="info-text-wrapper3">
-  <div class="info-text3">
-
-<p>Ключову роль у стрімкому злеті відіграли й комсомольські зв’язки. Дружба з молодими лідерами регіону, такими як керівник відділу пропаганди обкому комсомолу Олександр Турчинов, допомогла Юлі взяти під контроль дискотеки, кафе та концертні майданчики. Саме тоді перші великі гроші прийшли завдяки таким іменам, як Женя Білоусов, «Грецька смоківниця», «Ласкавий май» і навіть «Останній незайманець Америки».</p>
-<p>Чи було це злочином? Використовувати партійні та комсомольські зв'язки у ті часи було радше правилом, ніж виключенням. Адже хто би не скористався нагодою?</p>
-
+<div class="info-text-wrapper">
+  <div class="info-text">
+    <p>Ключову роль у стрімкому злеті відіграли й комсомольські зв’язки...</p>
+    <p>Чи було це злочином? Використовувати партійні та комсомольські зв'язки у ті часи було радше правилом...</p>
   </div>
 </div>
-
-
 
 <script>
   function toggleInfoText(button) {
     const wrapper = button.nextElementSibling;
+    const label = button.querySelector('.label');
     const arrow = button.querySelector('.arrow');
     const isOpen = wrapper.classList.contains('open');
 
     wrapper.classList.toggle('open');
+    label.textContent = isOpen ? 'Дізнатися більше' : 'Приховати';
     arrow.textContent = isOpen ? '↓' : '↑';
-    button.firstChild.textContent = isOpen ? 'Дізнатися більше ' : 'Приховати ';
   }
 </script>
+
+
+
+
+
+      
 
 
       
