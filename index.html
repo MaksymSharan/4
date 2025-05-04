@@ -12,21 +12,11 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
-
-
-
-
-
-
-
-
-  
   <style>
 /* Загальні стилі сторінки */
 body {
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
-  font-size: 18px; /* Збільшує розмір шрифту на весь сайт */
   margin: 0;
   padding: 0;
   background-color: #fffbe6;
@@ -158,11 +148,11 @@ footer {
   background-color: #f0f0f0;
 }
 
-/* Текст-розкривач (жінка з портфелем) */
+/* Текст-розкривач */
 .info-text-wrapper,
 .morality-text-wrapper {
   display: none;
-  background-color: #eaf4fc;
+  background-color: #ddd;
   padding: 20px;
   max-width: 800px;
   margin: 10px auto 30px auto;
@@ -304,7 +294,7 @@ footer {
 
 /* Контейнер що розкривається */
 .more-info-wrapper {
-  background-color: #eaf4fc; /* світло-блакитний, пастельний */;
+  background-color: #ddd;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   display: none;
@@ -388,10 +378,11 @@ footer {
     
   </style>
 </head>
-
-
 <body>
-  <div id="my-scroll-wrapper">
+
+
+
+
 
 
 
@@ -730,13 +721,5 @@ function toggleMoreInfo() {
   <footer>
     &copy; 2025 Усі права захищені.
   </footer>
-      </div>
 </body>
-
-<script>
-  Scrollbar.init(document.querySelector('#my-scroll-wrapper'), {
-    damping: 0.08
-  });
-</script>
-
 </html>
