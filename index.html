@@ -445,12 +445,12 @@ footer {
 <script>
   function toggleInfoText(button) {
     const textBlock = button.nextElementSibling;
-    const arrow = button.querySelector('.arrow');
+    const label = button.querySelector('.label');
 
     const isVisible = textBlock.style.display === 'block';
 
     textBlock.style.display = isVisible ? 'none' : 'block';
-    arrow.textContent = isVisible ? '↓' : '↑';
+    label.textContent = isVisible ? 'Дізнатися більше' : 'Дізнатися менше';
 
     if (!isVisible) {
       textBlock.classList.add('sharp-corners');
@@ -459,6 +459,7 @@ footer {
     }
   }
 </script>
+
 
       
 
