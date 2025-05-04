@@ -13,237 +13,48 @@
   <meta property="og:image:height" content="630">
 
   <style>
-    /* Загальні стилі сторінки */
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    a { text-decoration: none; color: inherit; }
-
-    /* Hero‑секція на повний екран */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh; /* Задаємо висоту на весь екран */
-      background-image: url('https://maksymsharan.github.io/4/Ulia.png');
-      background-size: cover; /* Покриває весь екран без обрізки */
-      background-position: center;
-      background-repeat: no-repeat; /* Забезпечує, щоб не було повторення зображення */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Стиль тексту для ефекту газу/вогню */
-    .hero h1 {
-      font-size: 4em;
-      color: transparent;
-      background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000);
-      background-size: 400% 400%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      animation: flame 3s ease-in-out infinite;
-      letter-spacing: 3px;
-      font-weight: bold;
-    }
-
-    /* Анімація для створення ефекту полум'я */
-    @keyframes flame {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    /* Контейнер з текстом */
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 8px;
-      background: none;  /* Прибрано білу рамку */
-      box-shadow: none;  /* Без тіні */
-    }
-
-.scroll-button {
-  display: inline-block;
-  padding: 12px 24px;
-  border: 2px solid #ff0000;
-  color: #ff0000;
-  font-size: 1.1em;
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.scroll-button:hover {
-  background-color: #ffe6e6;
-  transform: translateY(-2px);
-  scroll-behavior: smooth;
-}
- 
-    /* Підвал */
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.8em;
-      color: #aaa;
-      background: #fff;
-    }
-
-    /* Посилання на соцмережі */
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
-    }
-    .socials a {
-      color: #444;
-      text-decoration: none;
-      background-color: #e4e4e4;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-size: 1.1em;
-      font-weight: bold;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .socials a:hover {
-      background-color: #d1d1d1;
-      transform: scale(1.1);
-    }
-
-
-
-
-    .toggle-button {
-  background: none;
-  border: 2px solid #555;
+/* Загальні стилі сторінки */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
   color: #333;
-  font-weight: bold; /* ← ЖИРНИЙ текст кнопки */
-  padding: 10px 20px;
-  font-size: 1.1em;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: block;
-  margin: 40px auto 10px auto;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.toggle-button:hover {
-  background-color: #eee;
-}
-
-.info-text-wrapper {
-  display: none;
-  background-color: #ddd;
-  padding: 20px;
-  max-width: 800px;
-  margin: 10px auto 30px auto;
-  text-align: left;
-  border-radius: 8px;
-  transition: border-radius 0.3s ease;
-}
-
-.info-text-wrapper.sharp-corners {
-  border-radius: 0;
-}
-
-
-
-    
-
-
-
-
-/* Базовий стиль для фото */
-.responsive-image {
+/* Hero‑секція на повний екран */
+.hero {
+  position: relative;
   width: 100%;
-  height: auto;
-  max-width: 800px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 0px;
-  object-fit: contain;
+  height: 100vh;
+  background-image: url('https://maksymsharan.github.io/4/Ulia.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Спеціально для мобільних пристроїв */
-@media (max-width: 768px) {
-  .responsive-image {
-    max-width: 90%;
-    margin: 10px auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
-}
-
-/* Ефект полум'я для всіх заголовків всередині статті */
-.container h2, .container h3 {
-  font-size: 2em;
+/* Стиль тексту для ефекту газу/вогню */
+.hero h1 {
+  font-size: 4em;
   color: transparent;
   background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000);
   background-size: 400% 400%;
   -webkit-background-clip: text;
   background-clip: text;
   animation: flame 3s ease-in-out infinite;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
   font-weight: bold;
 }
 
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2em; /* Менший шрифт на телефонах */
-      text-align: center;
-      padding: 0 20px;
-    }
-    
-    .socials {
-      flex-direction: column; /* Кнопки одна під одною */
-      align-items: center;
-    }
-
-    .container {
-      padding: 20px;
-    }
-
-    .scroll-button {
-      width: 80%;
-    }
-  }
-
-.flame-background {
-  width: 100vw; /* Повна ширина в'юпорту */
-  margin-left: calc(-50vw + 50%); /* Щоб вийти за межі контейнера */
-  background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000);
-  background-size: 400% 400%;
-  animation: flame 6s ease-in-out infinite;
-  padding: 20px 20px;
-  padding-left: 0px; /* Трохи більше зліва */
-  text-align: left; /* Вирівнюємо текст по лівому краю */
-}
-
-.container-inside {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.flame-background h2,
-.flame-background p {
-  color: white; /* Білий текст */
-  font-weight: bold; /* Жирний шрифт */
-}
-
-/* Анімація фону (рух полум'я) */
+/* Анімація для полум’я */
 @keyframes flame {
   0% {
     background-position: 0% 50%;
@@ -256,18 +67,191 @@
   }
 }
 
+/* Контейнер з текстом */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 8px;
+  background: none;
+  box-shadow: none;
+}
+
+.scroll-button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid #ff0000;
+  color: #ff0000;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.scroll-button:hover {
+  background-color: #ffe6e6;
+  transform: translateY(-2px);
+  scroll-behavior: smooth;
+}
+
+/* Підвал */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8em;
+  color: #aaa;
+  background: #fff;
+}
+
+/* Соцмережі */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+.socials a {
+  color: #444;
+  text-decoration: none;
+  background-color: #e4e4e4;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.socials a:hover {
+  background-color: #d1d1d1;
+  transform: scale(1.1);
+}
+
+/* Кнопка перемикач */
+.toggle-button,
+.toggle-button2 {
+  background: none;
+  border: 2px solid #333;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 40px auto 10px auto;
+}
+.toggle-button2 {
+  margin: 40px auto 20px auto;
+}
+.toggle-button:hover,
+.toggle-button2:hover {
+  background-color: #f0f0f0;
+}
+
+/* Текст-розкривач */
+.info-text-wrapper,
+.morality-text-wrapper {
+  display: none;
+  background-color: #ddd;
+  padding: 20px;
+  max-width: 800px;
+  margin: 10px auto 30px auto;
+  text-align: left;
+  border-radius: 8px;
+  transition: border-radius 0.3s ease;
+}
+.info-text-wrapper.sharp-corners,
+.morality-text-wrapper.sharp-corners {
+  border-radius: 0;
+}
+
+/* Фото */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 0px;
+  object-fit: contain;
+}
+@media (max-width: 768px) {
+  .responsive-image {
+    max-width: 90%;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+}
+
+/* Полум’я для заголовків */
+.container h2, .container h3 {
+  font-size: 2em;
+  color: transparent;
+  background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: flame 3s ease-in-out infinite;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2em;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .socials {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .scroll-button {
+    width: 80%;
+  }
+}
+
+/* Полум’я на фоні секції */
+.flame-background {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: linear-gradient(45deg, #ff7e00, #ff4500, #ff0000, #f5e000);
+  background-size: 400% 400%;
+  animation: flame 6s ease-in-out infinite;
+  padding: 20px 20px;
+  padding-left: 0px;
+  text-align: left;
+}
+.container-inside {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.flame-background h2,
+.flame-background p {
+  color: white;
+  font-weight: bold;
+}
+
+/* Газове тло */
 .gas-flame-background {
   background: linear-gradient(
     90deg,
-    #0f2027,  /* темно-синій */
-    #203a43,  /* насичений синьо-бірюзовий */
-    #2c5364,  /* глибокий бірюзовий */
-    #1e3c72,  /* нічний синій */
-    #295a8e   /* холодний блакитно-синій */
+    #0f2027,
+    #203a43,
+    #2c5364,
+    #1e3c72,
+    #295a8e
   );
   background-size: 400% 400%;
   animation: gasFlameMove 14s ease infinite;
-  color: #e0e0e0; /* не чисто білий, трохи м'якший */
+  color: #e0e0e0;
   padding: 20px 40px;
   font-weight: bold;
   text-align: left;
@@ -275,20 +259,17 @@
   border-radius: 8px;
 }
 
-/* Анімація плавного мерехтіння */
 @keyframes gasFlameMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-
-    
+/* Моральна секція */
 .morality-section {
   text-align: center;
   margin: 40px 0;
 }
-
 .morality-toggle {
   background: none;
   border: 2px solid #333;
@@ -300,23 +281,10 @@
   font-weight: bold;
   transition: all 0.3s ease;
 }
-
 .morality-toggle .arrow {
   margin-right: 10px;
   font-size: 1.2em;
 }
-
-/* Сірий фон + вирівнювання ліворуч */
-.morality-text-wrapper {
-  display: none;
-  background-color: #ddd;
-  padding: 20px;
-  max-width: 800px;
-  margin: 20px auto;
-  text-align: left;
-  border-radius: 8px;
-}
-
 .morality-text {
   font-size: 1.05em;
   font-weight: normal;
@@ -324,58 +292,30 @@
   line-height: 1.5;
 }
 
-    .morality-text-wrapper.sharp-corners {
-  border-radius: 0; /* гострі кути */
-}
-
-
-
-    
-
-.toggle-button2 {
-  display: block;
-  margin: 40px auto 20px auto;
-  background: none;
-  border: 2px solid #333;
-  color: #333;
-  font-weight: bold; /* ← ЖИРНИЙ текст кнопки */
-  padding: 10px 20px;
-  font-size: 1.1em;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.toggle-button2:hover {
-  background-color: #f0f0f0;
-}
-
-/* Контейнер, що розкривається */
+/* Контейнер що розкривається */
 .more-info-wrapper {
   background-color: #ddd;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   display: none;
   padding: 30px 0;
-  border-radius: 0; /* гострі кути */
-  overflow-x: hidden !impotent;
+  border-radius: 0;
+  overflow-x: hidden !important;
 }
-
 .more-info-content {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
   text-align: left;
-  font-weight: normal; /* ← НЕ жирний */
+  font-weight: normal;
   color: #333;
 }
 
-
-{
+/* Глобальне box-sizing */
+* {
   box-sizing: border-box;
 }
 
-    
   </style>
 </head>
 <body>
