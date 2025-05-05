@@ -470,31 +470,49 @@ footer {
 
 
 
+    
+
 
 
     
 
-.fancy-button {
-  display: inline-block;
-  padding: 14px 28px;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(135deg, #1e90ff, #0066cc);
-  border: none;
-  border-radius: 30px;
-  box-shadow: 0 6px 15px rgba(0, 102, 204, 0.3);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 20px auto;
-  display: block;
-}
+body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 40px;
+    }
 
-.fancy-button:hover {
-  background: linear-gradient(135deg, #0066cc, #004d99);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.5);
-}
+    .fancy-button {
+      background: linear-gradient(45deg, #007BFF, #0056b3);
+      color: white;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .fancy-button:hover {
+      background: linear-gradient(45deg, #0056b3, #003c7a);
+      transform: translateY(-2px);
+    }
+
+    .hidden-box {
+      display: none;
+      width: 75%;
+      margin: 30px auto;
+      padding: 25px;
+      background-color: #f0f4ff;
+      border-left: 5px solid #007BFF;
+      border-radius: 12px;
+      font-size: 1.05em;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+    }
 
 
 
@@ -502,6 +520,11 @@ footer {
 
 
 
+
+
+
+
+    
 
 
     
@@ -627,7 +650,35 @@ footer {
 
 
 
-<button id="reveal-button" class="fancy-button">📘 Додатково</button>
+
+
+<body>
+
+  <button id="reveal-button" class="fancy-button">📘 Додатково</button>
+
+  <div id="hidden-content" class="hidden-box">
+    <p>Тут міститься унікальна інформація, якої немає на решті сайту. Її видно лише після натискання кнопки.</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const button = document.getElementById("reveal-button");
+      const content = document.getElementById("hidden-content");
+
+      button.addEventListener("click", function () {
+        if (content.style.display === "block") {
+          content.style.display = "none";
+          button.textContent = "📘 Додатково";
+        } else {
+          content.style.display = "block";
+          button.textContent = "❌ Закрити";
+        }
+      });
+    });
+  </script>
+
+
+  
 
 
 
