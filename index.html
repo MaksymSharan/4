@@ -371,63 +371,43 @@ footer {
 
 
 
+    
+
+
+
 
 
 .toc-wrapper {
   max-width: 800px;
-  margin: 20px auto 10px 10px;
+  margin: 20px auto 0 auto;
   font-family: sans-serif;
 }
 
 .toc-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  cursor: pointer;
-  padding: 10px 10px 10px 0;
+  align-items: center;
   position: relative;
-  gap: 10px;
+  padding: 10px;
 }
 
-.toc-lines {
-  display: flex;
-  flex-direction: column;
-  margin-right: 10px;
-}
-
-.line {
-  height: 2px;
-  background-color: #999;
-  margin: 2px 0;
-  border-radius: 2px;
-}
-
-.line.long {
-  width: 60px;
-}
-
-.line.short {
-  width: 30px;
-}
-
-.toc-toggle-icon {
-  font-size: 1.5em;
-  color: #777;
-  margin-right: 5px;
+.toc-toggle {
+  cursor: pointer;
 }
 
 .toc-label {
-  font-weight: bold;
   font-size: 1.2em;
-  color: #333;
+  font-weight: bold;
+  color: #444;
 }
 
 .toc-preambula {
-  margin-left: auto;
-  color: #444;
+  font-size: 0.9em;
   font-weight: bold;
   text-decoration: none;
-  font-size: 0.9em;
+  color: #333;
+  position: absolute;
+  right: 10px;
 }
 
 .toc-content {
@@ -437,8 +417,7 @@ footer {
 }
 
 .toc-item {
-  margin: 5px 0;
-  color: #333;
+  margin: 6px 0;
   font-size: 0.95em;
 }
 
@@ -454,12 +433,18 @@ footer {
   margin: 20px 0 30px;
 }
 
+hr {
+  border-top: 2px solid #ccc;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+hr:first-child {
+  border-top: 1px solid #aaa;
+  margin-top: 10px;
+}
 
 
-
-
-
-  
 
     
   </style>
@@ -495,21 +480,30 @@ footer {
     <a class="toc-preambula" href="https://maksymsharan.github.io/1/" target="_blank">PREAMBULA</a>
   </div>
 
+
+
+<div class="toc-wrapper">
+  <div class="toc-header">
+    <div class="toc-toggle" onclick="toggleToc()">
+      <span class="toc-label" id="toc-label">Зміст</span>
+    </div>
+    <a class="toc-preambula" href="https://maksymsharan.github.io/1/" target="_blank">PREAMBULA</a>
+  </div>
+
   <div class="toc-content" id="toc-content">
-    <div class="toc-item"><strong>Глава 1:</strong> <a href="#vstup">Вступ</a></div>
-    <div class="toc-item"><strong>Глава 2:</strong> <a href="#shkola">Шкільні роки, сім'я та освіта</a></div>
-    <div class="toc-item"><strong>Глава 3:</strong> <a href="#play">Play ►</a></div>
-    <div class="toc-item"><strong>Глава 4:</strong> <a href="#bensin">Затока можливостей: від касет до бензину</a></div>
-    <div class="toc-item"><strong>Глава 5:</strong> <a href="#kupyury">Купюри, які мріяли літати…</a></div>
-    <div class="toc-item"><strong>Глава 6:</strong> <a href="#portfel">Жінка з портфелем</a></div>
-    <div class="toc-item"><strong>Глава 7:</strong> <a href="#podatky">Мистецтво перереєстрації…</a></div>
-    <div class="toc-item"><strong>Глава 8:</strong> <a href="#lazarenko">Опіка великого друга Лазаренка</a></div>
-    <div class="toc-item"><strong>Глава 9:</strong> <a href="#politika">Перехід до великої політики…</a></div>
+    <div class="toc-item" style="color: black;"><strong>Глава 1:</strong> <a href="#vstup">Вступ</a></div>
+    <div class="toc-item" style="color: #777;"><strong>Глава 2:</strong> <a href="#shkola">Шкільні роки, сім'я та освіта</a></div>
+    <div class="toc-item" style="color: black;"><strong>Глава 3:</strong> <a href="#play">Play ►</a></div>
+    <div class="toc-item" style="color: #777;"><strong>Глава 4:</strong> <a href="#bensin">Затока можливостей: від касет до бензину</a></div>
+    <div class="toc-item" style="color: black;"><strong>Глава 5:</strong> <a href="#kupyury">Купюри, які мріяли літати…</a></div>
+    <div class="toc-item" style="color: #777;"><strong>Глава 6:</strong> <a href="#portfel">Жінка з портфелем</a></div>
+    <div class="toc-item" style="color: black;"><strong>Глава 7:</strong> <a href="#podatky">Мистецтво перереєстрації…</a></div>
+    <div class="toc-item" style="color: #777;"><strong>Глава 8:</strong> <a href="#lazarenko">Опіка великого друга Лазаренка</a></div>
+    <div class="toc-item" style="color: black;"><strong>Глава 9:</strong> <a href="#politika">Перехід до великої політики…</a></div>
   </div>
 </div>
 
 <hr class="toc-divider">
-
 
 
 
@@ -519,14 +513,13 @@ footer {
   function toggleToc() {
     const content = document.getElementById('toc-content');
     const label = document.getElementById('toc-label');
-    const icon = document.getElementById('toc-icon');
     const isOpen = content.style.display === 'block';
 
     content.style.display = isOpen ? 'none' : 'block';
     label.textContent = isOpen ? 'Зміст' : 'Закрити';
-    icon.textContent = isOpen ? '＋' : '✕';
   }
 </script>
+
 
 
 
