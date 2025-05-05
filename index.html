@@ -518,6 +518,88 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+ .top-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .toc-label,
+    .preambula-label {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #777;
+    }
+
+    .fancy-button {
+      background: linear-gradient(45deg, #007BFF, #0056b3);
+      color: white;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .fancy-button:hover {
+      background: linear-gradient(45deg, #0056b3, #003c7a);
+      transform: translateY(-2px);
+    }
+
+    .top-divider {
+      border-top: 1px solid #ccc;
+      width: 100%;
+      margin: 10px auto 30px auto;
+      opacity: 0.3;
+    }
+
+    .hidden-box {
+      display: none;
+      width: 75%;
+      margin: 0 auto;
+      padding: 25px;
+      background-color: #eef5ff;
+      border-left: 5px solid #007BFF;
+      border-radius: 12px;
+      font-size: 1.05em;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+    }
+
+    /* Наведення на глави */
+    .toc-content .toc-item a:hover {
+      color: red;
+    }
+
+
+
+
     
 
 
@@ -646,6 +728,66 @@ footer {
 
 
 
+
+  
+
+
+<body>
+
+  <div class="top-section">
+    <div class="toc-label">Зміст</div>
+    <button id="reveal-button" class="fancy-button">📘 Додатково</button>
+    <div class="preambula-label">PREAMBULA</div>
+  </div>
+
+  <div class="top-divider"></div>
+
+  <div id="hidden-content" class="hidden-box">
+    <p>Це додаткова інформація, якої не знайти в інших частинах сайту. Її видно тільки після натискання кнопки.</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const button = document.getElementById("reveal-button");
+      const content = document.getElementById("hidden-content");
+
+      button.addEventListener("click", function () {
+        if (content.style.display === "block") {
+          content.style.display = "none";
+          button.textContent = "📘 Додатково";
+        } else {
+          content.style.display = "block";
+          button.textContent = "❌ Закрити";
+        }
+      });
+    });
+  </script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
 <body>
 
   <button id="reveal-button" class="fancy-button">📘 Додатково</button>
@@ -679,6 +821,29 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
   
