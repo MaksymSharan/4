@@ -382,85 +382,78 @@ footer {
     
 /* Зміст Table of Contents */
 .toc-wrapper {
-  max-width: 100%;
-  padding: 10px 20px;
-  font-family: 'Segoe UI', sans-serif;
+  width: 300px;
+  margin: 20px auto 0 20px;
+  font-family: sans-serif;
 }
 
 .toc-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  position: relative;
-}
-
-.toc-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-}
-
-.line {
-  background-color: #888;
-  height: 2px;
-  margin: 1px 0;
-}
-.line-big {
-  width: 0.5cm;
-}
-.line-small {
-  width: 0.25cm;
+  align-items: center;
 }
 
 .toc-toggle {
-  border: none;
-  background: none;
-  color: #666;
+  cursor: pointer;
+  color: #888;
   font-weight: bold;
   font-size: 1em;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0;
+}
+
+.toc-toggle:hover {
+  color: #ff0000;
+}
+
+.toc-label {
+  margin-left: 5px;
 }
 
 .toc-preambula {
-  font-weight: bold;
   font-size: 0.9em;
-  color: #666;
+  font-weight: bold;
   text-decoration: none;
-  position: absolute;
-  right: 10px;
-  top: 0;
+  color: #555;
+  margin-left: auto;
+}
+
+.toc-preambula:hover {
+  color: #ff0000;
 }
 
 .toc-content {
+  display: block;
   margin-top: 10px;
-  display: none;
 }
 
 .toc-item {
-  padding: 10px;
   font-size: 0.95em;
+  margin: 5px 0;
 }
-.toc-item:nth-child(odd) {
-  background-color: #222;
-}
-.toc-item:nth-child(even) {
-  background-color: #999;
-}
+
 .toc-item a {
+  color: #333;
   text-decoration: none;
-  color: white;
-  display: block;
+  transition: color 0.2s;
 }
+
 .toc-item a:hover {
-  text-decoration: underline;
+  color: #ff0000;
 }
 
+.toc-item.gray a {
+  color: #777;
+}
 
+.toc-item.dark a {
+  color: #222;
+}
+
+.toc-separator {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+  opacity: 0.4;
+}
 
 
 
@@ -494,28 +487,21 @@ footer {
 
 <div class="toc-wrapper">
   <div class="toc-header">
-    <div class="toc-left">
-      <div class="line line-big"></div>
-      <div class="line line-small"></div>
-      <button class="toc-toggle" onclick="toggleTOC()">
-        <span id="toggleIcon">✖</span>
-        <span id="toggleLabel">Закрити</span>
-      </button>
-    </div>
-    <a href="https://maksymsharan.github.io/1/" class="toc-preambula" target="_blank">PREAMBULA</a>
+    <span class="toc-toggle" onclick="toggleTOC()">✖ <span class="toc-label">Закрити</span></span>
+    <a class="toc-preambula" href="https://maksymsharan.github.io/1/" target="_blank">PREAMBULA</a>
   </div>
-
-  <div class="toc-content" id="tocContent" style="display: none;">
-    <div class="toc-item"><a href="#chapter1">Глава 1: Вступ</a></div>
-    <div class="toc-item"><a href="#chapter2">Глава 2: Шкільні роки, сім'я та освіта</a></div>
-    <div class="toc-item"><a href="#chapter3">Глава 3: Play ►</a></div>
-    <div class="toc-item"><a href="#chapter4">Глава 4: Затока можливостей</a></div>
-    <div class="toc-item"><a href="#chapter5">Глава 5: Купюри, які мріяли літати</a></div>
-    <div class="toc-item"><a href="#chapter6">Глава 6: Жінка з портфелем</a></div>
-    <div class="toc-item"><a href="#chapter7">Глава 7: Мистецтво перереєстрації</a></div>
-    <div class="toc-item"><a href="#chapter8">Глава 8: Опіка Лазаренка</a></div>
-    <div class="toc-item"><a href="#chapter9">Глава 9: Велика політика</a></div>
+  <div class="toc-content">
+    <div class="toc-item gray"><a href="#chapter1">Глава 1: Вступ</a></div>
+    <div class="toc-item dark"><a href="#chapter2">Глава 2: Шкільні роки, сім’я та освіта</a></div>
+    <div class="toc-item gray"><a href="#chapter3">Глава 3: Play ►</a></div>
+    <div class="toc-item dark"><a href="#chapter4">Глава 4: Затока можливостей</a></div>
+    <div class="toc-item gray"><a href="#chapter5">Глава 5: Купюри, які мріяли літати</a></div>
+    <div class="toc-item dark"><a href="#chapter6">Глава 6: Жінка з портфелем</a></div>
+    <div class="toc-item gray"><a href="#chapter7">Глава 7: Мистецтво перереєстрації</a></div>
+    <div class="toc-item dark"><a href="#chapter8">Глава 8: Опіка Лазаренка</a></div>
+    <div class="toc-item gray"><a href="#chapter9">Глава 9: Велика політика</a></div>
   </div>
+  <hr class="toc-separator">
 </div>
 
 
@@ -527,18 +513,23 @@ footer {
 
 
 
-<script>
-function toggleTOC() {
-  const content = document.getElementById("tocContent");
-  const label = document.getElementById("toggleLabel");
-  const icon = document.getElementById("toggleIcon");
 
-  const isVisible = content.style.display === "block";
-  content.style.display = isVisible ? "none" : "block";
-  label.textContent = isVisible ? "Зміст" : "Закрити";
-  icon.textContent = isVisible ? "✚" : "✖";
-}
+<script>
+  function toggleTOC() {
+    const toc = document.querySelector('.toc-wrapper');
+    const content = document.querySelector('.toc-content');
+    const toggle = document.querySelector('.toc-toggle');
+
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      toggle.innerHTML = '☰ <span class="toc-label">Зміст</span>';
+    } else {
+      content.style.display = "block";
+      toggle.innerHTML = '✖ <span class="toc-label">Закрити</span>';
+    }
+  }
 </script>
+
 
 
 
