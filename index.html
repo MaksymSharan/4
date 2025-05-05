@@ -381,21 +381,16 @@ footer {
 
     
 /* Зміст Table of Contents */
+.toc-wrapper {
+  width: 300px;
+  margin: 20px auto 0 20px;
+  font-family: sans-serif;
+}
+
 .toc-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-}
-
-.toc-left {
-  flex: 1;
-  text-align: left;
-}
-
-.toc-right {
-  flex: 1;
-  text-align: right;
 }
 
 .toc-toggle {
@@ -418,12 +413,47 @@ footer {
   font-weight: bold;
   text-decoration: none;
   color: #555;
+  margin-left: auto;
 }
 
 .toc-preambula:hover {
   color: #ff0000;
 }
 
+.toc-content {
+  display: block;
+  margin-top: 10px;
+}
+
+.toc-item {
+  font-size: 0.95em;
+  margin: 5px 0;
+}
+
+.toc-item a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.toc-item a:hover {
+  color: #ff0000;
+}
+
+.toc-item.gray a {
+  color: #777;
+}
+
+.toc-item.dark a {
+  color: #222;
+}
+
+.toc-separator {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+  opacity: 0.4;
+}
 
 
 
@@ -457,12 +487,8 @@ footer {
 
 <div class="toc-wrapper">
   <div class="toc-header">
-    <div class="toc-left">
-      <span class="toc-toggle" onclick="toggleTOC()">✖ <span class="toc-label">Закрити</span></span>
-    </div>
-    <div class="toc-right">
-      <a class="toc-preambula" href="https://maksymsharan.github.io/1/" target="_blank">PREAMBULA</a>
-    </div>
+    <span class="toc-toggle" onclick="toggleTOC()">✖ <span class="toc-label">Закрити</span></span>
+    <a class="toc-preambula" href="https://maksymsharan.github.io/1/" target="_blank">PREAMBULA</a>
   </div>
   <div class="toc-content">
     <div class="toc-item gray"><a href="#chapter1">Глава 1: Вступ</a></div>
@@ -477,7 +503,6 @@ footer {
   </div>
   <hr class="toc-separator">
 </div>
-
 
 
 
