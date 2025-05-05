@@ -468,6 +468,12 @@ footer {
 
 
 
+
+
+
+
+    
+
 .fancy-button {
   display: inline-block;
   padding: 14px 28px;
@@ -489,6 +495,7 @@ footer {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 102, 204, 0.5);
 }
+
 
 
 
@@ -618,37 +625,9 @@ footer {
 
 
 
-<button id="reveal-button">Розгорнути додаткове</button>
-
-<div id="bottom-panel">
-  <div class="panel-content">
-    <h2>Додаткова інформація</h2>
-    <p>Це спеціальний контент, якого нема на головній сторінці.</p>
-    <button id="close-panel">Закрити</button>
-  </div>
-</div>
 
 
-
-
-
-
-
-
-<script>
-  const button = document.getElementById('reveal-button');
-  const panel = document.getElementById('bottom-panel');
-  const close = document.getElementById('close-panel');
-
-  button.addEventListener('click', () => {
-    panel.classList.add('show');
-  });
-
-  close.addEventListener('click', () => {
-    panel.classList.remove('show');
-  });
-</script>
-
+<button id="reveal-button" class="fancy-button">📘 Додатково</button>
 
 
 
@@ -673,6 +652,8 @@ footer {
 
 
 
+
+  
 
 
 
