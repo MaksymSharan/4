@@ -382,8 +382,8 @@ footer {
     
 /* Зміст Table of Contents */
 .toc-wrapper {
-  width: 300px;
-  margin: 20px auto 0 20px;
+  max-width: 800px;
+  margin: 20px auto 0 auto;
   font-family: sans-serif;
 }
 
@@ -391,29 +391,26 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 0;
 }
 
 .toc-toggle {
   cursor: pointer;
-  color: #888;
   font-weight: bold;
-  font-size: 1em;
+  color: #888;
+  font-size: 1.1em;
 }
 
 .toc-toggle:hover {
   color: #ff0000;
 }
 
-.toc-label {
-  margin-left: 5px;
-}
-
 .toc-preambula {
   font-size: 0.9em;
   font-weight: bold;
   text-decoration: none;
-  color: #555;
-  margin-left: auto;
+  color: #666;
+  padding-right: 10px;
 }
 
 .toc-preambula:hover {
@@ -421,37 +418,38 @@ footer {
 }
 
 .toc-content {
-  display: block;
+  display: none;
   margin-top: 10px;
+  padding-left: 10px;
 }
 
 .toc-item {
+  margin: 6px 0;
   font-size: 0.95em;
-  margin: 5px 0;
 }
 
 .toc-item a {
-  color: #333;
+  color: inherit;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
 .toc-item a:hover {
   color: #ff0000;
 }
 
-.toc-item.gray a {
-  color: #777;
+.toc-item.dark {
+  color: #111;
 }
 
-.toc-item.dark a {
-  color: #222;
+.toc-item.gray {
+  color: #666;
 }
 
 .toc-separator {
   border: none;
   border-top: 1px solid #ccc;
-  margin: 20px 0;
+  margin: 15px 0 20px 0;
   opacity: 0.4;
 }
 
@@ -487,20 +485,24 @@ footer {
 
 <div class="toc-wrapper">
   <div class="toc-header">
-    <span class="toc-toggle" onclick="toggleTOC()">✖ <span class="toc-label">Закрити</span></span>
+    <div class="toc-toggle" onclick="toggleTOC()">
+      <span id="toggle-icon">☰</span> <span id="toggle-label">Зміст</span>
+    </div>
     <a class="toc-preambula" href="https://maksymsharan.github.io/1/" target="_blank">PREAMBULA</a>
   </div>
-  <div class="toc-content">
-    <div class="toc-item gray"><a href="#chapter1">Глава 1: Вступ</a></div>
-    <div class="toc-item dark"><a href="#chapter2">Глава 2: Шкільні роки, сім’я та освіта</a></div>
-    <div class="toc-item gray"><a href="#chapter3">Глава 3: Play ►</a></div>
-    <div class="toc-item dark"><a href="#chapter4">Глава 4: Затока можливостей</a></div>
-    <div class="toc-item gray"><a href="#chapter5">Глава 5: Купюри, які мріяли літати</a></div>
-    <div class="toc-item dark"><a href="#chapter6">Глава 6: Жінка з портфелем</a></div>
-    <div class="toc-item gray"><a href="#chapter7">Глава 7: Мистецтво перереєстрації</a></div>
-    <div class="toc-item dark"><a href="#chapter8">Глава 8: Опіка Лазаренка</a></div>
-    <div class="toc-item gray"><a href="#chapter9">Глава 9: Велика політика</a></div>
+
+  <div class="toc-content" id="tocContent">
+    <div class="toc-item dark"><a href="#chapter1">Глава 1: Вступ</a></div>
+    <div class="toc-item gray"><a href="#chapter2">Глава 2: Шкільні роки, сім’я та освіта</a></div>
+    <div class="toc-item dark"><a href="#chapter3">Глава 3: Play ►</a></div>
+    <div class="toc-item gray"><a href="#chapter4">Глава 4: Затока можливостей: від касет до бензину</a></div>
+    <div class="toc-item dark"><a href="#chapter5">Глава 5: Купюри, які мріяли літати</a></div>
+    <div class="toc-item gray"><a href="#chapter6">Глава 6: Жінка з портфелем</a></div>
+    <div class="toc-item dark"><a href="#chapter7">Глава 7: Мистецтво перереєстрації</a></div>
+    <div class="toc-item gray"><a href="#chapter8">Глава 8: Опіка великого друга Лазаренка (1995–1997)</a></div>
+    <div class="toc-item dark"><a href="#chapter9">Глава 9: Перехід до великої політики та нові випробування</a></div>
   </div>
+
   <hr class="toc-separator">
 </div>
 
@@ -514,21 +516,30 @@ footer {
 
 
 
+
 <script>
   function toggleTOC() {
-    const toc = document.querySelector('.toc-wrapper');
-    const content = document.querySelector('.toc-content');
-    const toggle = document.querySelector('.toc-toggle');
+    const toc = document.getElementById("tocContent");
+    const label = document.getElementById("toggle-label");
+    const icon = document.getElementById("toggle-icon");
 
-    if (content.style.display === "block") {
-      content.style.display = "none";
-      toggle.innerHTML = '☰ <span class="toc-label">Зміст</span>';
+    if (toc.style.display === "block") {
+      toc.style.display = "none";
+      label.textContent = "Зміст";
+      icon.textContent = "☰";
     } else {
-      content.style.display = "block";
-      toggle.innerHTML = '✖ <span class="toc-label">Закрити</span>';
+      toc.style.display = "block";
+      label.textContent = "Закрити";
+      icon.textContent = "✖";
     }
   }
+
+  // Приховати зміст при завантаженні
+  window.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("tocContent").style.display = "none";
+  });
 </script>
+
 
 
 
