@@ -959,6 +959,12 @@ footer {
 </div>
 
 
+<script>
+  function toggleBox(id) {
+    const box = document.getElementById(id);
+    box.style.display = (box.style.display === 'none' || box.style.display === '') ? 'block' : 'none';
+  }
+</script>
 
 
 </div>
@@ -966,16 +972,6 @@ footer {
 
 
     
-<script>
-function toggleMoreInfo() {
-  const block = document.getElementById("moreInfo");
-  const btn = document.querySelector(".toggle-button2");
-  const isVisible = block.style.display === "block";
-
-  block.style.display = isVisible ? "none" : "block";
-  btn.innerHTML = isVisible ? "↓ Дізнатися більше" : "↑ Приховати";
-}
-</script>
 
 
 
