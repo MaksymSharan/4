@@ -513,8 +513,6 @@ footer {
 
 
 
-
-
 .woman-button {
   background: linear-gradient(45deg, #cccccc, #999999);
   color: white;
@@ -526,7 +524,10 @@ footer {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
   margin: 30px auto 10px auto;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
 }
 
 .woman-button:hover {
@@ -534,13 +535,14 @@ footer {
   transform: translate(-2px);
 }
 
-.woman-style {
-  background-color: #f6f6f6; /* трохи сіріше */
-  border-left: 0px solid #999; /* сіра смужка */
-  width: 100%; /* Ширина блоку встановлена на 100% */
-  max-width: 1000px; /* максимальна ширина */
-  margin: 0 auto; /* Центруємо блок */
+.arrow-icon {
+  transition: transform 0.3s ease;
 }
+
+.woman-button.rotated .arrow-icon {
+  transform: rotate(180deg);
+}
+
 
 
 
@@ -981,6 +983,18 @@ footer {
 <p>Результат – кримінальні справи проти подружжя Тимошенків за статтями Кримінального кодексу, які на той час ще мали силу. «Валютна контрабанда» – звучить гідно, майже героїчно. Але доля, як відомо, любить своїх. У 2001 році справи було скасовано, бо... сюрприз! – з Кримінального кодексу тихо зникла відповідальність за подібні дрібниці. Мораль така: якщо ти достатньо швидкий, багатий і потрібний – закон іноді просто бере паузу. </p>
    </div>
 
+
+<button class="woman-button" onclick="toggleBox('woman-box', this)">
+  Жінка з портфелем
+  <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9" />
+  </svg>
+</button>
+
+<div id="woman-box" class="hidden-box woman-style" style="display: none;">
+  <h2 id="chapter7">Глава 7: Жінка з портфелем</h2>
+  <p>Ось тут іде ваш прихований текст. Ви можете написати цілий розділ, вставити зображення, цитати чи будь-що інше.</p>
+</div>
 
 
 <button class="woman-button" onclick="toggleBox('woman-box')">Жінка з портфелем</button>
