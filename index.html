@@ -661,6 +661,7 @@ footer {
 
 
 
+
 	  
     
 
@@ -1173,13 +1174,36 @@ footer {
 </div>
 
 <script>
-  function toggleTooltip() {
+  let tooltipTimeout;
+
+  function toggleTooltip(event) {
+    event.stopPropagation();
     const tooltip = document.getElementById("tooltip-box");
-    tooltip.style.display = (tooltip.style.display === "block") ? "none" : "block";
+
+    const isVisible = tooltip.style.display === "block";
+    tooltip.style.display = isVisible ? "none" : "block";
+
+    if (!isVisible) {
+      // Автозакриття через 10 секунд
+      clearTimeout(tooltipTimeout);
+      tooltipTimeout = setTimeout(() => {
+        tooltip.style.display = "none";
+      }, 10000);
+    }
   }
 
-  // (Опціонально: автозакриття через 10 сек)
-  // або додайте `setTimeout()` як у попередньому варіанті
+  // Закриття при кліку поза довідкою
+  document.addEventListener("click", function (event) {
+    const tooltip = document.getElementById("tooltip-box");
+    const trigger = document.querySelector(".tooltip-trigger");
+
+    if (tooltip.style.display === "block" &&
+        !tooltip.contains(event.target) &&
+        !trigger.contains(event.target)) {
+      tooltip.style.display = "none";
+      clearTimeout(tooltipTimeout);
+    }
+  });
 </script>
 
 
