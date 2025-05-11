@@ -572,10 +572,6 @@ footer {
 
 
 
-
-
-
-
 	  
 	  
 	  
@@ -614,28 +610,53 @@ footer {
 
 
 
-.tooltip-trigger {
-  text-decoration: underline;
-  color: #0077cc;
-  cursor: pointer;
+
+
+
+
+
+
+	  
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
 }
 
 .tooltip-box {
   display: none;
-  position: fixed;
-  top: 20px;
+  position: absolute;
+  bottom: 120%;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
-  max-width: 600px;
   background-color: #fff8dc;
-  border: 1px solid #ccc;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
+  border: 1px solid #aaa;
+  padding: 12px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   font-family: 'Georgia', serif;
-  line-height: 1.5;
+  font-size: 0.95em;
+  line-height: 1.4;
+  z-index: 10;
+  border-radius: 8px;
+  width: 300px;
 }
+
+.tooltip-box::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #fff8dc transparent transparent transparent;
+}
+
+.tooltip-trigger {
+  text-decoration: underline dotted;
+  cursor: pointer;
+  color: #0055aa;
+}
+
 
 
 
@@ -1140,20 +1161,26 @@ footer {
 
   <div class="interrogation-content">
 <p><strong>Слідчий:</strong> - Що Вам відомо про компанію «United Energy», її власників та види діяльності?</p>
-<p><strong>Гравець:</strong>- Компанія зареєстрована у Лондоні, директора звати Аксой та засновники «Global Energy», Брасингтон, Віргінські острови. За Брасінгтоном трест <span class="tooltip-trigger" onclick="toggleTooltip()">(ТУТ)</span>
-
-<div id="tooltip-box" class="tooltip-box">
-  <p><strong>Трест</strong> – це форма об’єднання підприємств, при якій всі учасники повністю втрачають свою господарську самостійність і підпорядковуються єдиному керівництву. У тресті підприємства передають свої активи <i>(майно, прибутки, права)</i> центральному управлінню. Основна мета – монополізація ринку, контроль цін, усунення конкуренції.</p>
-</div> на острові Гернсі. Мені зателефонував Аксой про необхідність оформити траст <i>(довірчу власність)</i>. Я погодив це питання із Олександром Тимошенко. Замовляв оформлення трасту приблизно наприкінці 1994 – на початку 1995 у Лондоні, потім у відділенні «Credit Suisse» на острові Гернсі. Я був засновником трасту та протектором Тимошенко. Трасту було поставлено завдання купити ферму, було придбано «Brasington» на Британських Віргінських островах. Ця фірма стала основним засновником «United Energy».</p>
+<p><strong>Гравець:</strong>- Компанія зареєстрована у Лондоні, директора звати Аксой та засновники «Global Energy», Брасингтон, Віргінські острови. За Брасингтоном трест
+  <span class="tooltip-wrapper">
+    <span class="tooltip-trigger" onclick="toggleTooltip()"> (ТУТ) </span>
+    <span id="tooltip-box" class="tooltip-box">
+      <strong>Трест</strong> – це форма об’єднання підприємств, при якій всі учасники повністю втрачають свою господарську самостійність і підпорядковуються єдиному керівництву. У тресті підприємства передають свої активи <i>(майно, прибутки, права)</i> центральному управлінню. Основна мета – монополізація ринку, контроль цін, усунення конкуренції.
+    </span>
+  </span> на острові Гернсі. Мені зателефонував Аксой про необхідність оформити траст <i>(довірчу власність)</i>. Я погодив це питання із Олександром Тимошенко. Замовляв оформлення трасту приблизно наприкінці 1994 – на початку 1995 у Лондоні, потім у відділенні «Credit Suisse» на острові Гернсі. Я був засновником трасту та протектором Тимошенко. Трасту було поставлено завдання купити ферму, було придбано «Brasington» на Британських Віргінських островах. Ця фірма стала основним засновником «United Energy».</p>
   </div>
 </div>
 
-	    <script>
+<script>
   function toggleTooltip() {
     const tooltip = document.getElementById("tooltip-box");
     tooltip.style.display = (tooltip.style.display === "block") ? "none" : "block";
   }
+
+  // (Опціонально: автозакриття через 10 сек)
+  // або додайте `setTimeout()` як у попередньому варіанті
 </script>
+
 
 
 
