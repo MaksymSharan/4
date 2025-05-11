@@ -1171,23 +1171,12 @@ footer {
 	    
 
 <script>
-  let tooltipTimeout;
-
-  function toggleTooltip(event) {
-    event.stopPropagation();
+  function toggleTooltip() {
     const tooltip = document.getElementById("tooltip-box");
-
-    const isVisible = tooltip.style.display === "block";
-    tooltip.style.display = isVisible ? "none" : "block";
-
-    if (!isVisible) {
-      // Автозакриття через 10 секунд
-      clearTimeout(tooltipTimeout);
-      tooltipTimeout = setTimeout(() => {
-        tooltip.style.display = "none";
-      }, 10000);
-    }
+    tooltip.style.display = (tooltip.style.display === "block") ? "none" : "block";
   }
+
+
 
   // Закриття при кліку поза довідкою
   document.addEventListener("click", function (event) {
