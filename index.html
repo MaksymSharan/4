@@ -614,56 +614,51 @@ footer {
 
 
 
+   .tooltip-wrapper {
+      position: relative;
+      display: inline-block;
+    }
 
+    .tooltip-box {
+      display: none;
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff8dc;
+      border: 1px solid #aaa;
+      padding: 12px 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      font-family: 'Georgia', serif;
+      font-size: 0.95em;
+      line-height: 1.4;
+      z-index: 1000;
+      border-radius: 8px;
+      width: 300px;
+    }
 
-	  
-.tooltip-wrapper {
-  position: relative;
-  display: inline-block;
-}
+    .tooltip-box::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 6px;
+      border-style: solid;
+      border-color: #fff8dc transparent transparent transparent;
+    }
 
-.tooltip-box {
-  display: none;
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fff8dc;
-  border: 1px solid #aaa;
-  padding: 12px 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  font-family: 'Georgia', serif;
-  font-size: 0.95em;
-  line-height: 1.4;
-  z-index: 1000;
-  border-radius: 8px;
-  width: 300px;
-}
-
-.tooltip-box::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: #fff8dc transparent transparent transparent;
-}
-
-.tooltip-trigger {
-  text-decoration: underline dotted;
-  cursor: pointer;
-  color: #0055aa;
-}
-
-
-
-
-
+    .tooltip-trigger {
+      text-decoration: underline dotted;
+      cursor: pointer;
+      color: #0055aa;
+    }
 
 	  
-    
+
+
+
+
 
 
     
@@ -1184,7 +1179,6 @@ footer {
     tooltip.style.display = isVisible ? "none" : "block";
 
     if (!isVisible) {
-      // Автозакриття через 10 секунд
       clearTimeout(tooltipTimeout);
       tooltipTimeout = setTimeout(() => {
         tooltip.style.display = "none";
@@ -1192,7 +1186,6 @@ footer {
     }
   }
 
-  // Закриття при кліку поза довідкою
   document.addEventListener("click", function (event) {
     const tooltip = document.getElementById("tooltip-box");
     const trigger = document.querySelector(".tooltip-trigger");
@@ -1205,7 +1198,6 @@ footer {
     }
   });
 </script>
-
 
 
 
