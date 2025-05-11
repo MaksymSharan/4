@@ -1165,13 +1165,46 @@ footer {
   </span> на острові Гернсі. Мені зателефонував Аксой про необхідність оформити траст <i>(довірчу власність)</i>. Я погодив це питання із Олександром Тимошенко. Замовляв оформлення трасту приблизно наприкінці 1994 – на початку 1995 у Лондоні, потім у відділенні «Credit Suisse» на острові Гернсі. Я був засновником трасту та протектором Тимошенко. Трасту було поставлено завдання купити ферму, було придбано «Brasington» на Британських Віргінських островах. Ця фірма стала основним засновником «United Energy».</p>
   </div>
 </div>
-	  <script>
-  function toggleTooltip() {
+
+
+
+	    
+
+<script>
+  let tooltipTimeout;
+
+  function toggleTooltip(event) {
+    event.stopPropagation();
     const tooltip = document.getElementById("tooltip-box");
-    tooltip.style.display = (tooltip.style.display === "block") ? "none" : "block";
+
+    const isVisible = tooltip.style.display === "block";
+    tooltip.style.display = isVisible ? "none" : "block";
+
+    if (!isVisible) {
+      // Автозакриття через 10 секунд
+      clearTimeout(tooltipTimeout);
+      tooltipTimeout = setTimeout(() => {
+        tooltip.style.display = "none";
+      }, 10000);
+    }
   }
 
+  // Закриття при кліку поза довідкою
+  document.addEventListener("click", function (event) {
+    const tooltip = document.getElementById("tooltip-box");
+    const trigger = document.querySelector(".tooltip-trigger");
+
+    if (tooltip.style.display === "block" &&
+        !tooltip.contains(event.target) &&
+        !trigger.contains(event.target)) {
+      tooltip.style.display = "none";
+      clearTimeout(tooltipTimeout);
+    }
+  });
 </script>
+
+	    
+	    
 
 
 <p>Фірми-засновники ЄЕСУ фактично належали сім’ї Тимошенко. А всі «британські партнери», включно з турецьким громадянином Ерджументом Аксоєм, були фіктивними. Їхня головна мета – створити бар’єр для слідства. Адже жодна Україна не мала тоді змоги відправити слідчих ані у Лондон, ані на острів Гернсі чи Віргінські острови. І навіть якби відправила – хто би там щось розповів? Компанія «Somali» у схемі виконувала роль «інкасатора», «координатора» – саме через неї виводили гроші з України за кордон.</p>
