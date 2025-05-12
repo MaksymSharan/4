@@ -714,6 +714,20 @@ footer {
   display: block;
 }
 
+.image-wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.image-caption {
+  font-size: 14px;        /* менший кегль */
+  color: gray;            /* сірий текст */
+  font-style: normal;     /* без курсиву */
+  margin-top: 5px;        /* відступ вниз від фото */
+  text-align: left;       /* вирівнювання по лівому краю */
+}
+
+
 @media (max-width: 768px) {
   .custom-image {
     width: 100%;
@@ -1205,6 +1219,10 @@ footer {
 
 
 <img src="https://maksymsharan.github.io/4/Yul.png" alt="Юлія" class="responsive-image custom-image">
+<div class="image-wrapper">
+  <img src="https://maksymsharan.github.io/4/Yul.png" alt="Юлія" class="responsive-image custom-image">
+  <div class="image-caption">Юлія, 2024</div>
+</div>
 
 
 
