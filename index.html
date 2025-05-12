@@ -706,14 +706,21 @@ footer {
 
 
 
-.shifted-image {
-  margin-left: -90px; /* вихід за лівий край */
-  transform: translateX(0px); /* зсув праворуч */
-  width: calc(100% + 0px); /* компенсація обрізаного краю */
+.custom-image {
+  width: 960px;             /* ширина вручну */
+  margin-left: -80px;       /* вихід за лівий край */
+  transform: translateX(40px); /* зсув трохи праворуч */
   max-width: none;
+  display: block;
 }
 
-
+@media (max-width: 768px) {
+  .custom-image {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+}
 
 
 
@@ -1197,7 +1204,7 @@ footer {
 	    
 
 
-<img src="https://maksymsharan.github.io/4/Yul.png" alt="Юлія" class="responsive-image shifted-image">
+<img src="https://maksymsharan.github.io/4/Yul.png" alt="Юлія" class="responsive-image custom-image">
 
 
 
