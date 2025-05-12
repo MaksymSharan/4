@@ -706,25 +706,24 @@ footer {
 
 
 
-.fullscreen-image {
-  width: 100vw;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.image-container {
+html, body {
   margin: 0;
   padding: 0;
 }
 
+.image-fullscreen {
+  width: 100vw;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
 .image-caption {
-  text-align: left;
   font-size: 0.9em;
   color: #666;
-  padding: 10px 0 20px 0;
-  width: 75vw;
-  margin: 0 auto;
+  padding: 10px 20px;
+  max-width: 75vw;
+  margin-left: 0;
 }
 
 
@@ -1191,8 +1190,8 @@ footer {
 
 
 
-<figure class="image-container">
-  <img src="https://maksymsharan.github.io/4/Yul.png" alt="Юлія Тимошенко" class="fullscreen-image">
+<figure style="margin: 0; padding: 0;">
+  <img src="https://maksymsharan.github.io/4/Yul.png" alt="Юлія Тимошенко" class="image-fullscreen">
   <figcaption class="image-caption">
     Юлія Тимошенко під час слухань. Ліворуч сидять її друзі: Олександр Турчинов та Олег Ляшко.
   </figcaption>
