@@ -707,9 +707,10 @@ footer {
 
 
 .shifted-image {
-  margin-left: -40px; /* зсуває вліво */
-  width: calc(100% + 40px); /* компенсує обрізання */
-  max-width: none; /* дозволяє ширині вийти за max-width контейнера */
+  margin-left: -40px; /* вихід за лівий край */
+  transform: translateX(20px); /* зсув праворуч */
+  width: calc(100% + 40px); /* компенсація обрізаного краю */
+  max-width: none;
 }
 
 
