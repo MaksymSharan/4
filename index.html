@@ -762,6 +762,7 @@ footer {
 
     .slider-container {
       width: 80vw;
+      max-width: 100%;
       margin: 0 auto;
       position: relative;
     }
@@ -772,33 +773,37 @@ footer {
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
+      display: block;
     }
 
     .slider-controls {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      gap: 20px;
+      gap: 16px;
       margin-top: 10px;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .slider-controls button {
-      background: #333;
-      color: #fff;
+      background: none;
       border: none;
-      padding: 6px 12px;
-      border-radius: 6px;
+      color: #555;
+      font-size: 20px;
       cursor: pointer;
-      font-size: 16px;
-      transition: background 0.3s;
+      padding: 4px 10px;
     }
 
     .slider-controls button:hover {
-      background: #555;
+      color: #000;
     }
 
-    /* Modal styles */
+    .slider-controls span {
+      color: #555;
+      font-size: 15px;
+    }
+
+    /* Модальне вікно */
     .modal {
       display: none;
       position: fixed;
@@ -1286,7 +1291,16 @@ footer {
 
 
 
-	      <div class="slider-container">
+
+
+
+
+
+
+
+
+
+  <div class="slider-container">
     <img id="sliderImage" src="https://maksymsharan.github.io/4/Yul2.png" alt="Фото" class="slider-image">
     
     <div class="slider-controls">
@@ -1305,7 +1319,7 @@ footer {
   <script>
     const images = [
       "https://maksymsharan.github.io/4/Yul2.png",
-      "https://maksymsharan.github.io/4/Yul.png"
+      "https://maksymsharan.github.io/4/Yul3.png"
     ];
 
     let currentIndex = 0;
@@ -1339,6 +1353,20 @@ footer {
       modal.style.display = "none";
     }
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	    
 <p>Але цікавіше було інше. Коли слідчі взялися за архіви «КУБу», вони очікували побачити хоча б натяк на фінансову обережність. Але ні – усе було відкрито, просто й максимально недбало. Схеми, документи, підписи, прізвища – як на родинному святі. Зокрема у документах фігурували Сара Райхман, Міша Райхман, Шльома Райхман і Цив’є Ханьюк – команда, що за дивним збігом виявилася дуже близькою до Тимошенко. </p>
 <p>Наприклад, ось типовий артефакт тієї епохи – видатковий касовий ордер №366 на суму 560 мільйонів карбованців. У перерахунку на стабільнішу валюту – приблизно 100 тисяч доларів, або 25 київських квартир. І це лише один папірець із цілої скрині.
  
