@@ -490,7 +490,14 @@ footer {
       background: linear-gradient(45deg, #0056b3, #003c7a);
       transform: translateY(-2px);
     }
-
+/* Центрування кнопки на мобільних */
+@media (max-width: 768px) {
+  .fancy-button {
+    display: block;
+    margin: 20px auto; /* auto лівий+правий = по центру */
+    text-align: center;
+  }
+}
     .hidden-box {
       display: none;
       width: 75%;
