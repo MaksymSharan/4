@@ -855,67 +855,6 @@ footer {
 
 
 
-
-
-
-
-
-<body oncontextmenu="return false;">
-
-<script>
-  // Оригінальний скрипт блокування
-  document.addEventListener('keydown', function(e) {
-    if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) {
-      e.preventDefault();
-    }
-    if (e.key === 'F12') {
-      e.preventDefault();
-    }
-  });
-</script>
-
-<!-- Ось сюди додай новий скрипт -->
-<script>
-  // Збережемо старий oncontextmenu
-  const oldOnContextMenu = document.body.oncontextmenu;
-
-  // Тимчасово дозволяємо правий клік
-  document.body.oncontextmenu = null;
-
-  // Додаємо обробник, який перешкоджає блокуванню клавіш
-  window.allowCopy = true;
-
-  function permitCopyHandler(e) {
-    if (window.allowCopy) {
-      e.stopImmediatePropagation();
-    }
-  }
-
-  document.addEventListener('keydown', permitCopyHandler, true);
-
-  // Через 3 хвилини знову забороняємо
-  setTimeout(() => {
-    document.body.oncontextmenu = oldOnContextMenu;
-    window.allowCopy = false;
-    alert("Копіювання знову заборонене.");
-  }, 180000);
-</script>
-
-</body>
-
-
-
-
-
-
-
-	
-
-  
-  
-
-
-
   
   <!-- Верхнє меню або лого -->
   <header style="background: #1a1a1a; padding: 20px; text-align: center;">
