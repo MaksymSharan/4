@@ -1810,52 +1810,7 @@ footer {
 
 
 
-<script>
-    // Оригінальний код блокування копіювання та інструментів розробника
-    function blockKeys(e) {
-      if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) {
-        e.preventDefault();
-      }
-      if (e.key === 'F12') {
-        e.preventDefault();
-      }
-    }
 
-    document.addEventListener('keydown', blockKeys);
-
-    // Блокуємо правий клік через атрибут oncontextmenu у body
-
-    // --- Тепер код, який через 3 хвилини перебиває блокування ---
-
-    function allowCopying() {
-      // Скасовуємо oncontextmenu блокування
-      document.body.oncontextmenu = null;
-
-      // Додаємо свій обробник контекстного меню, який не блокує
-      document.body.addEventListener('contextmenu', e => e.stopPropagation(), true);
-
-      // Додаємо обробник на фазі захоплення, щоб зупинити інші блокуючі обробники
-      document.addEventListener('keydown', function permitCopy(e) {
-        // Перебиваємо інші обробники блокування подій
-        e.stopImmediatePropagation();
-        // Дозволяємо стандартну поведінку (копіювання, відкриття інструментів і т.д.)
-      }, true);
-    }
-
-    // Запускаємо через 180000 мс (3 хвилини)
-    setTimeout(() => {
-      allowCopying();
-      alert("Копіювання тепер дозволене!");
-    }, 180000);
-
-  </script>
-
-
-
-
-
-
-	
     <!-- Соцмережеві посилання -->
     <div class="socials">
       <a href="https://facebook.com/sharer/sharer.php?u=https://maksymsharan.github.io/4/Ulia.png" target="_blank">Facebook</a>
